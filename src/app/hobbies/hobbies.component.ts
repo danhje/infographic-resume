@@ -4,13 +4,6 @@ import {Subscription, timer} from 'rxjs';
 
 export interface CircleProgressOptionsInterface {
     class?: string;
-    backgroundGradient?: boolean;
-    backgroundColor?: string;
-    backgroundGradientStopColor?: string;
-    backgroundOpacity?: number;
-    backgroundStroke?: string;
-    backgroundStrokeWidth?: number;
-    backgroundPadding?: number;
     percent?: number;
     radius?: number;
     space?: number;
@@ -20,16 +13,9 @@ export interface CircleProgressOptionsInterface {
     units?: string;
     unitsFontSize?: string;
     unitsFontWeight?: string;
-    unitsColor?: string;
-    outerStrokeGradient?: boolean;
-    outerStrokeWidth?: number;
-    outerStrokeColor?: string;
-    outerStrokeGradientStopColor?: string;
-    outerStrokeLinecap?: string;
-    innerStrokeColor?: string;
-    innerStrokeWidth?: number;
     titleFormat?: Function;
     title?: string | Array<String>;
+    label?: string;
     titleColor?: string;
     titleFontSize?: string;
     titleFontWeight?: string;
@@ -38,23 +24,12 @@ export interface CircleProgressOptionsInterface {
     subtitleColor?: string;
     subtitleFontSize?: string;
     subtitleFontWeight?: string;
-    imageSrc?: string;
-    imageHeight?: number;
-    imageWidth?: number;
     animation?: boolean;
     animateTitle?: boolean;
     animateSubtitle?: boolean;
     animationDuration?: number;
     showTitle?: boolean;
-    showSubtitle?: boolean;
-    showUnits?: boolean;
-    showImage?: boolean;
-    showBackground?: boolean;
-    showInnerStroke?: boolean;
-    clockwise?: boolean;
     responsive?: boolean;
-    startFromZero?: boolean;
-    showZeroOuterStroke?: boolean;
     lazy?: boolean;
 }
 
@@ -86,6 +61,7 @@ export class CircleProgressOptions implements CircleProgressOptionsInterface {
     innerStrokeWidth = 4;
     titleFormat = undefined;
     title: string | Array<String> = 'auto';
+    label: string;
     titleColor = '#444444';
     titleFontSize = '20';
     titleFontWeight = 'normal';
@@ -117,31 +93,7 @@ export class CircleProgressOptions implements CircleProgressOptionsInterface {
 /** @dynamic Prevent compiling error when using type `Document` https://github.com/angular/angular/issues/20351 */
 @Component({
     selector: 'app-hobbies',
-    template: `
-        <svg xmlns="http://www.w3.org/2000/svg" *ngIf="svg"
-             [attr.viewBox]="svg.viewBox" preserveAspectRatio="xMidYMid meet"
-             [attr.height]="svg.height" [attr.width]="svg.width" (click)="emitClickEvent($event)" [attr.class]="options.class">
-            <circle *ngIf="options.showInnerStroke"
-                    [attr.cx]="svg.circle.cx"
-                    [attr.cy]="svg.circle.cy"
-                    [attr.r]="svg.circle.r"/>
-            <text *ngIf="options.showTitle"
-                  alignment-baseline="baseline"
-                  [attr.x]="svg.circle.cx"
-                  [attr.y]="svg.circle.cy"
-                  [attr.text-anchor]="svg.title.textAnchor">
-                <ng-container *ngIf="options.showTitle">
-                    <tspan *ngFor="let tspan of svg.title.tspans"
-                           [attr.x]="svg.title.x"
-                           [attr.y]="svg.title.y"
-                           [attr.dy]="tspan.dy"
-                           [attr.font-size]="svg.title.fontSize"
-                           [attr.font-weight]="svg.title.fontWeight"
-                           [attr.fill]="svg.title.color">{{tspan.span}}</tspan>
-                </ng-container>
-            </text>
-        </svg>
-    `
+    templateUrl: './hobbies.component.html'
 })
 export class CircleProgressComponent implements OnChanges, OnInit, OnDestroy {
 
@@ -180,6 +132,7 @@ export class CircleProgressComponent implements OnChanges, OnInit, OnDestroy {
 
     @Input() titleFormat: Function;
     @Input() title: string | Array<String>;
+    @Input() label: string;
     @Input() titleColor: string;
     @Input() titleFontSize: string;
     @Input() titleFontWeight: string;
@@ -233,7 +186,7 @@ export class CircleProgressComponent implements OnChanges, OnInit, OnDestroy {
 
         this.applyOptions();
 
-        if(this.options.lazy){
+        if (this.options.lazy){
             // Draw svg if it doesn't exist
             this.svgElement === null && this.draw(this._lastPercent);
             // Draw it only when it's in the viewport
@@ -254,29 +207,29 @@ export class CircleProgressComponent implements OnChanges, OnInit, OnDestroy {
             }
             this._lastPercent = this.options.percent;
         }
-    };
+    }
     polarToCartesian = (centerX: number, centerY: number, radius: number, angleInDegrees: number) => {
-        let angleInRadius = angleInDegrees * Math.PI / 180;
-        let x = centerX + Math.sin(angleInRadius) * radius;
-        let y = centerY - Math.cos(angleInRadius) * radius;
+        const angleInRadius = angleInDegrees * Math.PI / 180;
+        const x = centerX + Math.sin(angleInRadius) * radius;
+        const y = centerY - Math.cos(angleInRadius) * radius;
         return {x: x, y: y};
     };
     draw = (percent: number) => {
         // make percent reasonable
         percent = (percent === undefined) ? this.options.percent : Math.abs(percent);
         // circle percent shouldn't be greater than 100%.
-        let circlePercent = (percent > 100) ? 100 : percent;
+        const circlePercent = (percent > 100) ? 100 : percent;
         // determine box size
         let boxSize = this.options.radius * 2 + this.options.outerStrokeWidth * 2;
         if (this.options.showBackground) {
             boxSize += (this.options.backgroundStrokeWidth * 2 + this.max(0, this.options.backgroundPadding * 2));
         }
         // the centre of the circle
-        let centre = {x: boxSize / 2, y: boxSize / 2};
+        const centre = {x: boxSize / 2, y: boxSize / 2};
         // the start point of the arc
-        let startPoint = {x: centre.x, y: centre.y - this.options.radius};
+        const startPoint = {x: centre.x, y: centre.y - this.options.radius};
         // get the end point of the arc
-        let endPoint = this.polarToCartesian(centre.x, centre.y, this.options.radius, 360 * (this.options.clockwise ?
+        const endPoint = this.polarToCartesian(centre.x, centre.y, this.options.radius, 360 * (this.options.clockwise ?
             circlePercent :
             (100 - circlePercent)) / 100);  // ####################
         // We'll get an end point with the same [x, y] as the start point when percent is 100%, so move x a little bit.
@@ -291,12 +244,12 @@ export class CircleProgressComponent implements OnChanges, OnInit, OnDestroy {
             [largeArcFlag, sweepFlag] = this.options.clockwise ? [0, 1] : [0, 0];
         }
         // percent may not equal the actual percent
-        let titlePercent = this.options.animateTitle ? percent : this.options.percent;
-        let titleTextPercent = titlePercent > this.options.maxPercent ?
+        const titlePercent = this.options.animateTitle ? percent : this.options.percent;
+        const titleTextPercent = titlePercent > this.options.maxPercent ?
             `${this.options.maxPercent.toFixed(this.options.toFixed)}+` : titlePercent.toFixed(this.options.toFixed);
-        let subtitlePercent = this.options.animateSubtitle ? percent : this.options.percent;
+        const subtitlePercent = this.options.animateSubtitle ? percent : this.options.percent;
         // get title object
-        let title = {
+        const title = {
             x: centre.x,
             y: centre.y,
             textAnchor: 'middle',
@@ -308,7 +261,7 @@ export class CircleProgressComponent implements OnChanges, OnInit, OnDestroy {
         };
         // from v0.9.9, both title and titleFormat(...) may be an array of string.
         if (this.options.titleFormat !== undefined && this.options.titleFormat.constructor.name === 'Function') {
-            let formatted = this.options.titleFormat(titlePercent);
+            const formatted = this.options.titleFormat(titlePercent);
             if (formatted instanceof Array) {
                 title.texts = [...formatted];
             } else {
@@ -326,7 +279,7 @@ export class CircleProgressComponent implements OnChanges, OnInit, OnDestroy {
             }
         }
         // get subtitle object
-        let subtitle = {
+        const subtitle = {
             x: centre.x,
             y: centre.y,
             textAnchor: 'middle',
@@ -335,10 +288,10 @@ export class CircleProgressComponent implements OnChanges, OnInit, OnDestroy {
             fontWeight: this.options.subtitleFontWeight,
             texts: [],
             tspans: []
-        }
+        };
         // from v0.9.9, both subtitle and subtitleFormat(...) may be an array of string.
         if (this.options.subtitleFormat !== undefined && this.options.subtitleFormat.constructor.name === 'Function') {
-            let formatted = this.options.subtitleFormat(subtitlePercent);
+            const formatted = this.options.subtitleFormat(subtitlePercent);
             if (formatted instanceof Array) {
                 subtitle.texts = [...formatted];
             } else {
@@ -352,7 +305,7 @@ export class CircleProgressComponent implements OnChanges, OnInit, OnDestroy {
             }
         }
         // get units object
-        let units = {
+        const units = {
             text: `${this.options.units}`,
             fontSize: this.options.unitsFontSize,
             fontWeight: this.options.unitsFontWeight,
@@ -387,54 +340,20 @@ export class CircleProgressComponent implements OnChanges, OnInit, OnDestroy {
             // Set both width and height to '100%' if it's responsive
             width: this.options.responsive ? '100%' : boxSize,
             height: this.options.responsive ? '100%' : boxSize,
-            backgroundCircle: {
+            title: title,
+            label: this.options.label,
+            circle: {
                 cx: centre.x,
                 cy: centre.y,
                 r: this.options.radius + this.options.outerStrokeWidth / 2 + this.options.backgroundPadding,
                 fill: this.options.backgroundColor,
                 fillOpacity: this.options.backgroundOpacity,
-                stroke: this.options.backgroundStroke,
-                strokeWidth: this.options.backgroundStrokeWidth,
-            },
-            path: {
-                // A rx ry x-axis-rotation large-arc-flag sweep-flag x y (https://developer.mozilla.org/en/docs/Web/SVG/Tutorial/Paths#Arcs)
-                d: `M ${startPoint.x} ${startPoint.y}
-        A ${this.options.radius} ${this.options.radius} 0 ${largeArcFlag} ${sweepFlag} ${endPoint.x} ${endPoint.y}`,
                 stroke: this.options.outerStrokeColor,
-                strokeWidth: this.options.outerStrokeWidth,
-                strokeLinecap: this.options.outerStrokeLinecap,
-                fill: 'none'
-            },
-            circle: {
-                cx: centre.x,
-                cy: centre.y,
-                r: this.options.radius - this.options.space - this.options.outerStrokeWidth / 2 - this.options.innerStrokeWidth / 2,
-                fill: 'none',
-                stroke: this.options.innerStrokeColor,
-                strokeWidth: this.options.innerStrokeWidth,
-            },
-            title: title,
-            units: units,
-            subtitle: subtitle,
-            image: {
-                x: centre.x - this.options.imageWidth / 2,
-                y: centre.y - this.options.imageHeight / 2,
-                src: this.options.imageSrc,
-                width: this.options.imageWidth,
-                height: this.options.imageHeight,
-            },
-            outerLinearGradient: {
-                id: 'outer-linear-' + this._gradientUUID,
-                colorStop1: this.options.outerStrokeColor,
-                colorStop2: this.options.outerStrokeGradientStopColor === 'transparent' ? '#FFF' : this.options.outerStrokeGradientStopColor,
-            },
-            radialGradient: {
-                id: 'radial-' + this._gradientUUID,
-                colorStop1: this.options.backgroundColor,
-                colorStop2: this.options.backgroundGradientStopColor === 'transparent' ? '#FFF' : this.options.backgroundGradientStopColor,
+                strokeWidth: this.options.backgroundStrokeWidth,
             }
         };
-    };
+        console.log(this.svg)
+    }
     getAnimationParameters = (previousPercent: number, currentPercent: number) => {
         const MIN_INTERVAL = 10;
         let times: number;
@@ -474,17 +393,18 @@ export class CircleProgressComponent implements OnChanges, OnInit, OnDestroy {
         if (step < 1) {
             step = 1;
         }
+        // tslint:disable-next-line: object-literal-shorthand
         return {times: times, step: step, interval: interval};
     };
     animate = (previousPercent: number, currentPercent: number) => {
         if (this._timerSubscription && !this._timerSubscription.closed) {
             this._timerSubscription.unsubscribe();
         }
-        let fromPercent = this.options.startFromZero ? 0 : previousPercent;
-        let toPercent = currentPercent;
-        let {step: step, interval: interval} = this.getAnimationParameters(fromPercent, toPercent);
+        const fromPercent = this.options.startFromZero ? 0 : previousPercent;
+        const toPercent = currentPercent;
+        const {step: step, interval: interval} = this.getAnimationParameters(fromPercent, toPercent);
         let count = fromPercent;
-        if(fromPercent < toPercent){
+        if (fromPercent < toPercent){
             this._timerSubscription = timer(0, interval).subscribe(() => {
                 count += step;
                 if (count <= toPercent) {
@@ -499,7 +419,8 @@ export class CircleProgressComponent implements OnChanges, OnInit, OnDestroy {
                     this._timerSubscription.unsubscribe();
                 }
             });
-        }else{
+        }
+        else {
             this._timerSubscription = timer(0, interval).subscribe(() => {
                 count -= step;
                 if (count >= toPercent) {
@@ -525,7 +446,7 @@ export class CircleProgressComponent implements OnChanges, OnInit, OnDestroy {
     private _timerSubscription: Subscription;
     private applyOptions = () => {
         // the options of <circle-progress> may change already
-        for (let name of Object.keys(this.options)) {
+        for (const name of Object.keys(this.options)) {
             if (this.hasOwnProperty(name) && this[name] !== undefined) {
                 this.options[name] = this[name];
             } else if (this.templateOptions && this.templateOptions[name] !== undefined) {
@@ -541,20 +462,21 @@ export class CircleProgressComponent implements OnChanges, OnInit, OnDestroy {
         this.options.outerStrokeWidth = Math.abs(+this.options.outerStrokeWidth);
         this.options.innerStrokeWidth = Math.abs(+this.options.innerStrokeWidth);
         this.options.backgroundPadding = +this.options.backgroundPadding;
-    };
+    }
     private getRelativeY = (rowNum: number, rowCount: number): string => {
         // why '-0.18em'? It's a magic number when property 'alignment-baseline' equals 'baseline'. :)
-        let initialOffset = -0.18, offset = 1;
+        const initialOffset = -0.18;
+        const offset = 1;
         return (initialOffset + offset * (rowNum - rowCount / 2)).toFixed(2) + 'em';
-    };
+    }
 
     private min = (a: number, b: number) => {
         return a < b ? a : b;
-    };
+    }
 
     private max = (a: number, b: number) => {
         return a > b ? a : b;
-    };
+    }
 
     private uuid = () => {
         // https://www.w3resource.com/javascript-exercises/javascript-math-exercise-23.php
@@ -572,9 +494,9 @@ export class CircleProgressComponent implements OnChanges, OnInit, OnDestroy {
     }
 
     public findSvgElement = function() {
-        if(this.svgElement === null){
-            let tags = this.elRef.nativeElement.getElementsByTagName('svg');
-            if(tags.length>0){
+        if (this.svgElement === null){
+            const tags = this.elRef.nativeElement.getElementsByTagName('svg');
+            if (tags.length>0){
                 this.svgElement = tags[0];
             }
         }
@@ -587,10 +509,10 @@ export class CircleProgressComponent implements OnChanges, OnInit, OnDestroy {
         let rect = el.getBoundingClientRect(), parent = el.parentNode, parentRect;
         do {
           parentRect = parent.getBoundingClientRect();
-          if (rect.top >= parentRect.bottom) return false;
-          if (rect.bottom <= parentRect.top) return false;
-          if (rect.left >= parentRect.right) return false;
-          if (rect.right <= parentRect.left) return false;
+          if (rect.top >= parentRect.bottom) { return false; }
+          if (rect.bottom <= parentRect.top) { return false; }
+          if (rect.left >= parentRect.right) { return false; }
+          if (rect.right <= parentRect.left) { return false; }
           parent = parent.parentNode;
         } while (parent != this.document.body);
         // Check its within the document viewport
@@ -603,7 +525,7 @@ export class CircleProgressComponent implements OnChanges, OnInit, OnDestroy {
 
     checkViewport = () => {
         this.findSvgElement();
-        let previousValue = this.isInViewport;
+        const previousValue = this.isInViewport;
         this.isInViewport = this.isElementInViewport(this.svgElement);
         if(previousValue !== this.isInViewport) {
             this.onViewportChanged.emit({oldValue: previousValue, newValue: this.isInViewport});
@@ -615,19 +537,19 @@ export class CircleProgressComponent implements OnChanges, OnInit, OnDestroy {
     }
 
     loadEventsForLazyMode = () => {
-        if(this.options.lazy){
+        if (this.options.lazy){
             this.document.addEventListener('scroll', this.onScroll, true);
             this.window.addEventListener('resize', this.onScroll, true);
-            if(this._viewportChangedSubscriber === null){
+            if (this._viewportChangedSubscriber === null){
                 this._viewportChangedSubscriber = this.onViewportChanged.subscribe(({oldValue, newValue}) => {
                     newValue ? this.render() : null;
                 });
             }
             // svgElement must be created in DOM before being checked.
             // Is there a better way to check the existence of svgElemnt?
-            let _timer = timer(0, 50).subscribe(()=>{
+            const _timer = timer(0, 50).subscribe(() => {
                 this.svgElement === null ? this.checkViewport() : _timer.unsubscribe();
-            })
+            });
         }
     }
 
