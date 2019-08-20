@@ -65,6 +65,9 @@ export class CircleProgressComponent implements OnChanges {
     options: CircleProgressOptions = new CircleProgressOptions();
     defaultOptions: CircleProgressOptions = new CircleProgressOptions();
     lastPercent = 0;
+
+    private timerSubscription: Subscription;
+
     render = () => {
         this.applyOptions();
         this.animate(this.lastPercent, this.options.percent);
@@ -185,8 +188,6 @@ export class CircleProgressComponent implements OnChanges {
       this.animate(0, 2.2 * this.options.percent);
       this.MouseEnter.emit(event);
     }
-
-    private timerSubscription: Subscription;
 
     private applyOptions = () => {
         // the options of <circle-progress> may change already
