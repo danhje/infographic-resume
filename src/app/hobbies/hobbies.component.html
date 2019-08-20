@@ -1,23 +1,24 @@
 <svg xmlns="http://www.w3.org/2000/svg" *ngIf="svg"
   [attr.viewBox]="svg.viewBox" preserveAspectRatio="xMidYMid meet"
-  [attr.height]="svg.height" [attr.width]="svg.width" (mouseenter)="emitClickEvent($event)" [attr.class]="options.class">
+  [attr.height]="svg.height" [attr.width]="svg.width" (mouseenter)="emitMouseenterEvent($event)" [attr.class]="options.class">
 <circle
   [attr.cx]="svg.circle.cx"
   [attr.cy]="svg.circle.cy"
   [attr.r]="svg.circle.r"
-  [attr.fill]="svg.circle.stroke"/>
+  [attr.fill]="svg.circle.stroke"
+  />
 <text
      alignment-baseline="baseline"
      [attr.x]="svg.circle.cx"
      [attr.y]="svg.circle.cy"
      [attr.text-anchor]="svg.title.textAnchor">
    <ng-container>
-       <tspan *ngFor="let tspan of svg.title.tspans"
+       <tspan
               [attr.x]="svg.title.x"
               [attr.y]="svg.title.y"
               [attr.font-size]="svg.title.fontSize"
               [attr.font-weight]="svg.title.fontWeight"
-              [attr.fill]="svg.title.color">{{svg.label}}</tspan>
+              [attr.fill]="svg.title.color">{{svg.title.text}}</tspan>
    </ng-container>
 </text>
 </svg>

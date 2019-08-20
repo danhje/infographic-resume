@@ -14,7 +14,7 @@ import { NgCircleProgressModule } from './hobbies';
       // set defaults here
       radius: 100,
       animationDuration: 300,
-      label: 'test1'
+      title: 'test1'
     })
   ],
   providers: [],
