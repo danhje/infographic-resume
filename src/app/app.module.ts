@@ -3,10 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { NgCircleProgressModule } from './hobby';
+import { HobbiesComponent } from './hobbies/hobbies.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HobbiesComponent
   ],
   imports: [
     BrowserModule,

@@ -16,7 +16,7 @@ export class CircleProgressOptions implements CircleProgressOptionsInterface {
 
 /** @dynamic Prevent compiling error when using type `Document` https://github.com/angular/angular/issues/20351 */
 @Component({
-    selector: 'app-hobbies',
+    selector: 'app-hobby',
     templateUrl: './hobby.component.html'
 })
 export class HobbyComponent implements OnChanges {
