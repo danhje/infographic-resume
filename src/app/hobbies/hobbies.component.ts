@@ -19,7 +19,7 @@ export class CircleProgressOptions implements CircleProgressOptionsInterface {
     selector: 'app-hobbies',
     templateUrl: './hobbies.component.html'
 })
-export class CircleProgressComponent implements OnChanges {
+export class HobbiesComponent implements OnChanges {
 
     @Output() MouseEnter: EventEmitter<any> = new EventEmitter();
     @Output() MouseLeave: EventEmitter<any> = new EventEmitter();

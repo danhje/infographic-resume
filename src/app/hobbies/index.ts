@@ -1,6 +1,6 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CircleProgressComponent, CircleProgressOptionsInterface, CircleProgressOptions } from './hobbies.component';
+import { HobbiesComponent, CircleProgressOptionsInterface, CircleProgressOptions } from './hobbies.component';
 
 export * from './hobbies.component';
 
@@ -9,10 +9,10 @@ export * from './hobbies.component';
     CommonModule
   ],
   declarations: [
-    CircleProgressComponent,
+    HobbiesComponent,
   ],
   exports: [
-    CircleProgressComponent,
+    HobbiesComponent,
   ]
 })
 export class NgCircleProgressModule {
