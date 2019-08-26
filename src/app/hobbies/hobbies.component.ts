@@ -25,7 +25,7 @@ export class CircleProgressComponent implements OnChanges {
     @Output() MouseLeave: EventEmitter<any> = new EventEmitter();
 
     @Input() restingRadius: number;
-    @Input() hightlightRadius: number;
+    @Input() highlightRadius: number;
     @Input() label: number;
     @Input() color: string;
     @Input() animationDuration: number;
@@ -55,7 +55,7 @@ export class CircleProgressComponent implements OnChanges {
         this.lastRadius = radius;
 
         // determine box size
-        const boxSize = this.hightlightRadius * 2;
+        const boxSize = this.highlightRadius * 2;
         // the centre of the circle
         const centre = {x: boxSize / 2, y: boxSize / 2};
 
@@ -117,7 +117,7 @@ export class CircleProgressComponent implements OnChanges {
     }
 
     emitMouseenterEvent = (event: any) => {
-      this.animate(this.hightlightRadius);
+      this.animate(this.highlightRadius);
       this.MouseEnter.emit(event);
     }
 
