@@ -9,15 +9,14 @@
   />
 <text
      alignment-baseline="baseline"
-     [attr.x]="svg.circle.cx"
-     [attr.y]="svg.circle.cy"
-     [attr.text-anchor]="svg.title.textAnchor">
+     [attr.x]="svg.title.x"
+     [attr.y]="svg.title.y"
+     text-anchor="middle">
    <ng-container>
        <tspan
               [attr.x]="svg.title.x"
               [attr.y]="svg.title.y"
-              [attr.font-size]="svg.title.fontSize"
-              [attr.font-weight]="svg.title.fontWeight"
+              font-size="20"
               [attr.fill]="svg.title.color">{{svg.title.text}}</tspan>
    </ng-container>
 </text>

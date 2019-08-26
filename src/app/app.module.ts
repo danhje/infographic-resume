@@ -10,12 +10,7 @@ import { NgCircleProgressModule } from './hobbies';
   ],
   imports: [
     BrowserModule,
-    NgCircleProgressModule.forRoot({
-      // set defaults here
-      radius: 100,
-      animationDuration: 300,
-      title: 'test1'
-    })
+    NgCircleProgressModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
