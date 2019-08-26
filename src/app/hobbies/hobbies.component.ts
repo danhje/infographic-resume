@@ -11,7 +11,7 @@ export interface CircleProgressOptionsInterface {
 
 export class CircleProgressOptions implements CircleProgressOptionsInterface {
     color = '#78C000';
-    animationDuration = 500;
+    animationDuration = 100;
 }
 
 /** @dynamic Prevent compiling error when using type `Document` https://github.com/angular/angular/issues/20351 */
@@ -22,6 +22,7 @@ export class CircleProgressOptions implements CircleProgressOptionsInterface {
 export class CircleProgressComponent implements OnChanges {
 
     @Output() MouseEnter: EventEmitter<any> = new EventEmitter();
+    @Output() MouseLeave: EventEmitter<any> = new EventEmitter();
 
     @Input() restingRadius: number;
     @Input() hightlightRadius: number;
@@ -46,11 +47,13 @@ export class CircleProgressComponent implements OnChanges {
 
     render = () => {
         this.applyOptions();
-        this.animate(this.lastRadius, this.restingRadius);
-        this.lastRadius = this.restingRadius;
+        this.animate(this.restingRadius);
     }
 
     draw = (radius: number) => {
+
+        this.lastRadius = radius;
+
         // determine box size
         const boxSize = this.hightlightRadius * 2;
         // the centre of the circle
@@ -79,18 +82,18 @@ export class CircleProgressComponent implements OnChanges {
         };
     }
 
-    animate = (fromRadius: number, toRadius: number) => {
-        const times = 30;
+    animate = (toRadius: number) => {
 
         if (this.timerSubscription && !this.timerSubscription.closed) {
             this.timerSubscription.unsubscribe();
         }
 
+        const times = 20;
         const interval = this.animationDuration / times;
-        const step = (toRadius - fromRadius) / times;
+        const step = (toRadius - this.lastRadius) / times;
 
-        let count = fromRadius;
-        if (fromRadius < toRadius) {
+        let count = this.lastRadius;
+        if (this.lastRadius < toRadius) {
             this.timerSubscription = timer(0, interval).subscribe(() => {
                 count += step;
                 if (count <= toRadius) {
@@ -102,7 +105,7 @@ export class CircleProgressComponent implements OnChanges {
             });
         } else {
             this.timerSubscription = timer(0, interval).subscribe(() => {
-                count -= step;
+                count += step;
                 if (count >= toRadius) {
                   this.draw(count);
                 } else {
@@ -114,8 +117,13 @@ export class CircleProgressComponent implements OnChanges {
     }
 
     emitMouseenterEvent = (event: any) => {
-      this.animate(this.restingRadius, this.hightlightRadius);
+      this.animate(this.hightlightRadius);
       this.MouseEnter.emit(event);
+    }
+
+    emitMouseleaveEvent = (event: any) => {
+      this.animate(this.restingRadius);
+      this.MouseLeave.emit(event);
     }
 
     private applyOptions = () => {
@@ -154,10 +162,10 @@ export class CircleProgressComponent implements OnChanges {
         this.render();
     }
 
-    constructor(defaultOptions: CircleProgressOptions, private elRef: ElementRef, @Inject(DOCUMENT) private document: Document) {
+    constructor(private elRef: ElementRef, @Inject(DOCUMENT) private document: Document) {
         this.document = document;
         this.window = this.document.defaultView;
-        Object.assign(this.options, defaultOptions);
-        Object.assign(this.defaultOptions, defaultOptions);
+        // Object.assign(this.options, defaultOptions);
+        // Object.assign(this.defaultOptions, defaultOptions);
     }
 }
