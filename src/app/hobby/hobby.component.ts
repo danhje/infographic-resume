@@ -17,9 +17,9 @@ export class CircleProgressOptions implements CircleProgressOptionsInterface {
 /** @dynamic Prevent compiling error when using type `Document` https://github.com/angular/angular/issues/20351 */
 @Component({
     selector: 'app-hobbies',
-    templateUrl: './hobbies.component.html'
+    templateUrl: './hobby.component.html'
 })
-export class HobbiesComponent implements OnChanges {
+export class HobbyComponent implements OnChanges {
 
     @Output() MouseEnter: EventEmitter<any> = new EventEmitter();
     @Output() MouseLeave: EventEmitter<any> = new EventEmitter();
