@@ -1,0 +1,11 @@
+.hobby {
+  position: absolute;
+}
+
+#first-hobby {
+  left: 100px;
+}
+
+#second-hobby {
+  left: 200px;
+}
