@@ -1,25 +1,25 @@
 <svg xmlns="http://www.w3.org/2000/svg" *ngIf="svg"
   [attr.viewBox]="svg.viewBox" preserveAspectRatio="xMidYMid meet"
   [attr.height]="svg.height" [attr.width]="svg.width">
-<circle
-  (mouseenter)="emitMouseenterEvent($event)"
-  (mouseleave)="emitMouseleaveEvent($event)"
-  [attr.cx]="svg.circle.cx"
-  [attr.cy]="svg.circle.cy"
-  [attr.r]="svg.circle.r"
-  [attr.fill]="svg.circle.stroke"
-  />
-<text
-     alignment-baseline="baseline"
-     [attr.x]="svg.title.x"
-     [attr.y]="svg.title.y"
-     text-anchor="middle">
-   <ng-container>
-       <tspan
-              [attr.x]="svg.title.x"
-              [attr.y]="svg.title.y"
-              font-size="20"
-              [attr.fill]="svg.title.color">{{svg.title.text}}</tspan>
-   </ng-container>
-</text>
+  <circle
+    (mouseenter)="emitMouseenterEvent($event)"
+    (mouseleave)="emitMouseleaveEvent($event)"
+    [attr.cx]="svg.circle.cx"
+    [attr.cy]="svg.circle.cy"
+    [attr.r]="svg.circle.r"
+    [attr.fill]="svg.circle.stroke"
+    />
+  <text
+      alignment-baseline="baseline"
+      [attr.x]="svg.title.x"
+      [attr.y]="svg.title.y"
+      text-anchor="middle">
+    <ng-container>
+        <tspan
+                [attr.x]="svg.title.x"
+                [attr.y]="svg.title.y"
+                font-size="20"
+                [attr.fill]="svg.title.color">{{svg.title.text}}</tspan>
+    </ng-container>
+  </text>
 </svg>
