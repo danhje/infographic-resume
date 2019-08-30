@@ -2,10 +2,22 @@
   position: absolute;
 }
 
-#first-hobby {
+#hobby-bjj {
+  top: 0px;
   left: 100px;
 }
 
-#second-hobby {
+#hobby-philosophy {
+  top: 230px;
+  left: 130px;
+}
+
+#hobby-learning {
+  top: 60px;
+  left: 300px;
+}
+
+#hobby-nature {
+  top: 180px;
   left: 200px;
 }

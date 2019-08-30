@@ -2,17 +2,6 @@ import {Component, EventEmitter, Input, OnChanges, Output, Inject, OnInit, OnDes
 import {DOCUMENT} from '@angular/common';
 import {Subscription, timer} from 'rxjs';
 
-export interface CircleProgressOptionsInterface {
-    restingRadius?: number;
-    highlightRadius?: number;
-    label?: string;
-    animationDuration?: number;
-}
-
-export class CircleProgressOptions implements CircleProgressOptionsInterface {
-    color = '#78C000';
-    animationDuration = 100;
-}
 
 /** @dynamic Prevent compiling error when using type `Document` https://github.com/angular/angular/issues/20351 */
 @Component({
@@ -31,23 +20,17 @@ export class HobbyComponent implements OnChanges {
     @Input() color: string;
     @Input() animationDuration: number;
 
-    // tslint:disable-next-line: no-input-rename
-    @Input('options') templateOptions: CircleProgressOptions;
-
     // <svg> of component
     svgElement: HTMLElement = null;
     window: Window;
 
     svg: any;
 
-    options: CircleProgressOptions = new CircleProgressOptions();
-    defaultOptions: CircleProgressOptions = new CircleProgressOptions();
     lastRadius = this.restingRadius;
 
     private timerSubscription: Subscription;
 
     render = () => {
-        this.applyOptions();
         this.animate(this.restingRadius);
     }
 
@@ -78,7 +61,7 @@ export class HobbyComponent implements OnChanges {
                 cx: centre.x,
                 cy: centre.y,
                 r: radius,
-                stroke: this.options.color,
+                stroke: this.color,
             }
         };
     }
@@ -125,17 +108,6 @@ export class HobbyComponent implements OnChanges {
     emitMouseleaveEvent = (event: any) => {
       this.animate(this.restingRadius);
       this.MouseLeave.emit(event);
-    }
-
-    private applyOptions = () => {
-        // the options of <circle-progress> may change already
-        for (const name of Object.keys(this.options)) {
-            if (this.hasOwnProperty(name) && this[name] !== undefined) {
-                this.options[name] = this[name];
-            } else if (this.templateOptions && this.templateOptions[name] !== undefined) {
-                this.options[name] = this.templateOptions[name];
-            }
-        }
     }
 
     private min = (a: number, b: number) => {

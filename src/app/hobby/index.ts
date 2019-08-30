@@ -1,6 +1,6 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HobbyComponent, CircleProgressOptionsInterface, CircleProgressOptions } from './hobby.component';
+import { HobbyComponent } from './hobby.component';
 
 export * from './hobby.component';
 
@@ -16,12 +16,10 @@ export * from './hobby.component';
   ]
 })
 export class NgCircleProgressModule {
-  static forRoot(options: CircleProgressOptionsInterface = {}): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders {
     return {
       ngModule: NgCircleProgressModule,
-      providers: [
-        {provide: CircleProgressOptions, useValue: options}
-      ]
+      providers: []
     };
   }
 }
