@@ -1,7 +1,7 @@
 .circle {
   position: absolute;
   transition: 0.2s;
-  opacity: 0.85;
+  opacity: 1;
 }
 
 .circle:hover {
@@ -9,13 +9,13 @@
 }
 
 .circle:nth-of-type(1) {
-  z-index: 4;
+  z-index: 1;
   top: 0px;
   left: 0px;
   width: 220px;
   height: 220px;
   clip-path: circle(100px at 110px 110px);
-  background-color: #fd5551;
+  background-color: #fd6551;
 }
 
 .circle:nth-of-type(1):hover {
@@ -29,7 +29,7 @@
   width: 120px;
   height: 120px;
   clip-path: circle(50px at 60px 60px);
-  background-color: #5297b5;
+  background-color: #57a3c0;
 }
 
 .circle:nth-of-type(2):hover {
@@ -37,31 +37,31 @@
 }
 
 .circle:nth-of-type(3) {
-  z-index: 2;
+  z-index: 4;
   top: 60px;
   left: 180px;
-  width: 120px;
-  height: 120px;
-  clip-path: circle(50px at 60px 60px);
-  background-color: #f9d34c;
+  width: 140px;
+  height: 140px;
+  clip-path: circle(60px at 70px 70px);
+  background-color: #ffc545;
 }
 
 .circle:nth-of-type(3):hover {
-  clip-path: circle(60px at 60px 60px);
+  clip-path: circle(70px at 70px 70px);
 }
 
 .circle:nth-of-type(4) {
-  z-index: 1;
-  top: 140px;
-  left: 140px;
-  width: 160px;
-  height: 160px;
-  clip-path: circle(70px at 80px 80px);
-  background-color: #a0e950;
+  z-index: 3;
+  top: 135px;
+  left: 135px;
+  width: 180px;
+  height: 180px;
+  clip-path: circle(80px at 90px 90px);
+  background-color: #94c048;
 }
 
 .circle:nth-of-type(4):hover {
-  clip-path: circle(80px at 80px 80px);
+  clip-path: circle(90px at 90px 90px);
 }
 
 :host {
