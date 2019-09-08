@@ -1,3 +1,10 @@
+:host {
+  display: block;
+  position: relative;
+  height: 300px;
+  width: 300px;
+}
+
 .circle {
   position: absolute;
   transition: 0.2s;
@@ -9,7 +16,7 @@
 }
 
 .circle:nth-of-type(1) {
-  z-index: 1;
+  z-index: 3;
   top: 0px;
   left: 0px;
   width: 220px;
@@ -23,7 +30,7 @@
 }
 
 .circle:nth-of-type(2) {
-  z-index: 3;
+  z-index: 1;
   top: 180px;
   left: 50px;
   width: 120px;
@@ -38,8 +45,8 @@
 
 .circle:nth-of-type(3) {
   z-index: 4;
-  top: 60px;
-  left: 180px;
+  top: 40px;
+  left: 160px;
   width: 140px;
   height: 140px;
   clip-path: circle(60px at 70px 70px);
@@ -52,8 +59,8 @@
 
 .circle:nth-of-type(4) {
   z-index: 3;
-  top: 135px;
-  left: 135px;
+  top: 120px;
+  left: 120px;
   width: 180px;
   height: 180px;
   clip-path: circle(80px at 90px 90px);
@@ -62,13 +69,6 @@
 
 .circle:nth-of-type(4):hover {
   clip-path: circle(90px at 90px 90px);
-}
-
-:host {
-  display: block;
-  position: relative;
-  height: 300px;
-  width: 300px;
 }
 
 svg {

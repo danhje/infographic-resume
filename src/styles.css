@@ -1,6 +1,8 @@
 body {
   margin: 0;
   background-color:#323639;
+  font-family: Verdana, Geneva, sans-serif;
+  font-weight: 100;
 }
 
 #wrapper {
@@ -10,5 +12,12 @@ body {
 }
 
 .component-title {
-  color: #ccc;
+  color: #eee;
+}
+
+#maintitle {
+  font-weight: normal;
+  font-size: 50px;
+  text-align: center;
+  color: #eee;
 }

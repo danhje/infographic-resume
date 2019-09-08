@@ -1,0 +1,70 @@
+:host {
+  position: absolute;
+  margin-top: -300px;
+  margin-left: 0px;
+  width: 300px;
+  height: 600px;
+  z-index: 99;
+}
+
+.infobox {
+  margin-top: 0px;
+  margin-left: 1px;
+  width: 300px;
+  height: 250px;
+  clip-path: inset(0% 100% 100% 0%);
+  -webkit-clip-path: inset(0% 100% 100% 0%);
+  animation: revealInfoBox 0.5s 1.5s;
+  animation-fill-mode: forwards;
+}
+
+h1 {
+  display:inline;
+  margin: 0px;
+  color: #eee;
+  font-size: 16px;
+  background-color: #fd6551;
+  padding: 0px 2px 2px 0px;
+}
+
+p {
+  margin: 0px;
+  color: #eee;
+  background-color: rgba(50, 54, 57, 0.5);
+  font-size: 12px;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes revealInfoBox {
+  0%   {-webkit-clip-path: inset(0% 100% 100% 0%)}
+  100% {-webkit-clip-path: inset(0% 0% 0% 0%)}
+}
+
+@keyframes revealInfoBox {
+  0%   {clip-path: inset(0% 100% 100% 0%)}
+  100% {clip-path: inset(0% 0% 0% 0%)}
+}
+
+.line {
+  position: absolute;
+  bottom: 0px;
+  margin-left: 0px;
+  width: 1px;
+  height: 0px;
+  background-color: #fd6551;
+  -webkit-animation: extendLine 1s 1s; /* Safari 4.0 - 8.0 */
+  animation: extendLine 0.5s 1s;
+  animation-fill-mode: forwards;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes extendLine {
+  0%   {height: 0px}
+  100% {height: 600px}
+}
+
+@keyframes extendLine {
+  0%   {height: 0px}
+  100% {height: 600px}
+}
+
