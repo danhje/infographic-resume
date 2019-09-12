@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-hobbies',
@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./hobbies.component.css']
 })
 export class HobbiesComponent {
+  @Output() elementClicked = new EventEmitter();
 
+  onClick(event: MouseEvent) {
+    this.elementClicked.emit(event);
+  }
 }

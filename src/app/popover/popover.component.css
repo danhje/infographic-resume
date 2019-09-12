@@ -1,9 +1,9 @@
 :host {
   position: absolute;
-  margin-top: -300px;
+  margin-top: 0px;
   margin-left: 0px;
   width: 300px;
-  height: 600px;
+  height: 300px;
   z-index: 99;
 }
 
@@ -21,9 +21,11 @@
 h1 {
   display:inline;
   margin: 0px;
-  color: #eee;
+  color: #323639;
   font-size: 16px;
-  background-color: #fd6551;
+}
+
+h1 span {
   padding: 0px 2px 2px 0px;
 }
 
@@ -60,11 +62,11 @@ p {
 /* Safari 4.0 - 8.0 */
 @-webkit-keyframes extendLine {
   0%   {height: 0px}
-  100% {height: 600px}
+  100% {height: 300px}
 }
 
 @keyframes extendLine {
   0%   {height: 0px}
-  100% {height: 600px}
+  100% {height: 300px}
 }
 

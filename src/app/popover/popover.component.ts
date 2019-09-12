@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-popover',
@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./popover.component.css']
 })
 export class PopoverComponent {
-
+  @Input() popoverColor = 'red';
 }
