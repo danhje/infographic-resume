@@ -1,16 +1,21 @@
-import { Component, ElementRef } from '@angular/core';
-import { isNull } from '@angular/compiler/src/output/output_ast';
+import { Component,
+         ViewChild,
+         ViewContainerRef,
+         ComponentFactoryResolver,
+         Renderer2,
+         ElementRef,
+         OnInit} from '@angular/core';
+import { PopoverComponent } from './popover/popover.component';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  showPopover = false;
-  popoverLeft = 0;
-  popoverTop = 0;
-  popoverColor = '';
+export class AppComponent implements OnInit {
+  @ViewChild('popover', {read: ViewContainerRef, static: true}) entry: ViewContainerRef;
+
+  constructor(private componentFactoryResolver: ComponentFactoryResolver, private renderer: Renderer2) { }
 
   getOffsetTop(elem: HTMLElement) {
     let offsetTop = elem.offsetTop;
@@ -29,10 +34,15 @@ export class AppComponent {
   }
 
   childElementClicked(event: MouseEvent) {
-    this.showPopover = true;
     const target = (event.target as HTMLElement);
-    this.popoverColor = window.getComputedStyle(target).backgroundColor;
-    this.popoverLeft = this.getOffsetLeft(target) + target.offsetWidth / 2;
-    this.popoverTop = this.getOffsetTop(target) + target.offsetHeight / 2 - 300; // 300 is the height of popover.
+
+    const componentFactory = this.componentFactoryResolver.resolveComponentFactory(PopoverComponent);
+    const viewContainerRef = this.entry;
+    const popoverRef = viewContainerRef.createComponent(componentFactory);
+    (popoverRef.instance as PopoverComponent).popoverColor = window.getComputedStyle(target).backgroundColor;
+    (popoverRef.instance as PopoverComponent).popoverLeft = this.getOffsetLeft(target) + target.offsetWidth / 2;
+    (popoverRef.instance as PopoverComponent).popoverTop = this.getOffsetTop(target) + target.offsetHeight / 2 - 300;
+    (popoverRef.instance as PopoverComponent).selfComponentRef = popoverRef;
+    // 300 is the height of popover.
   }
 }

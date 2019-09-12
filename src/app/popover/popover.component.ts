@@ -1,4 +1,4 @@
-import { Component, Input, ElementRef, HostListener, OnInit } from '@angular/core';
+import { Component, Input, ElementRef, HostListener, HostBinding, OnInit, ViewContainerRef } from '@angular/core';
 
 @Component({
   selector: 'app-popover',
@@ -9,15 +9,20 @@ export class PopoverComponent implements OnInit {
   @Input() popoverColor = '';
   visible = true;
   shouldIgnoreClickout = true;
-  timer;
+  startupTimer: any;
+  destroyTimer: any;
+  selfComponentRef: any;
+
+  @HostBinding('style.left.px') popoverLeft = 0;
+  @HostBinding('style.top.px') popoverTop = 0;
 
   constructor(private eRef: ElementRef) {
   }
 
   startTimer() {
-    this.timer = setInterval(() => {
+    this.startupTimer = setInterval(() => {
       this.shouldIgnoreClickout = false;
-      clearInterval(this.timer);
+      clearInterval(this.startupTimer);
     }, 100);
   }
 
@@ -33,9 +38,16 @@ export class PopoverComponent implements OnInit {
       console.log('clicked outside');
       if (!this.shouldIgnoreClickout) {
         this.visible = false;
+        this.destroyAfterDelay();
       }
     }
   }
 
+  destroyAfterDelay() {
+    this.destroyTimer = setInterval(() => {
+      this.selfComponentRef.destroy();
+      clearInterval(this.destroyTimer);
+    }, 1000);
+  }
 
 }

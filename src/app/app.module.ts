@@ -14,6 +14,7 @@ import { PopoverComponent } from './popover/popover.component';
   imports: [
     BrowserModule,
   ],
+  entryComponents: [PopoverComponent],
   providers: [],
   bootstrap: [AppComponent]
 })
