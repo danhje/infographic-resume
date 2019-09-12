@@ -5,6 +5,7 @@
   width: 300px;
   height: 300px;
   z-index: 99;
+  pointer-events: none;
 }
 
 .infobox {
@@ -13,9 +14,39 @@
   width: 300px;
   height: 250px;
   clip-path: inset(0% 100% 100% 0%);
-  -webkit-clip-path: inset(0% 100% 100% 0%);
-  animation: revealInfoBox 0.5s 1.5s;
+  -webkit-animation: revealInfoBox 0.5s 0.5s;
+  animation: revealInfoBox 0.5s 0.5s;
+  -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes revealInfoBox {
+  0%   {clip-path: inset(0% 100% 100% 0%)}
+  100% {clip-path: inset(0% 0% 0% 0%)}
+}
+
+@keyframes revealInfoBox {
+  0%   {clip-path: inset(0% 100% 100% 0%)}
+  100% {clip-path: inset(0% 0% 0% 0%)}
+}
+
+.hiddeninfobox {
+  -webkit-animation: hideInfoBox 0.5s 0s;
+  animation: hideInfoBox 0.5s 0s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes hideInfoBox {
+  0%   {clip-path: inset(0% 0% 0% 0%)}
+  100% {clip-path: inset(0% 100% 100% 0%)}
+}
+
+@keyframes hideInfoBox {
+  0%   {clip-path: inset(0% 0% 0% 0%)}
+  100% {clip-path: inset(0% 100% 100% 0%)}
 }
 
 h1 {
@@ -27,6 +58,7 @@ h1 {
 
 h1 span {
   padding: 0px 2px 2px 0px;
+  pointer-events: auto;
 }
 
 p {
@@ -34,17 +66,7 @@ p {
   color: #eee;
   background-color: rgba(50, 54, 57, 0.5);
   font-size: 12px;
-}
-
-/* Safari 4.0 - 8.0 */
-@-webkit-keyframes revealInfoBox {
-  0%   {-webkit-clip-path: inset(0% 100% 100% 0%)}
-  100% {-webkit-clip-path: inset(0% 0% 0% 0%)}
-}
-
-@keyframes revealInfoBox {
-  0%   {clip-path: inset(0% 100% 100% 0%)}
-  100% {clip-path: inset(0% 0% 0% 0%)}
+  pointer-events: auto;
 }
 
 .line {
@@ -54,8 +76,9 @@ p {
   width: 1px;
   height: 0px;
   background-color: #fd6551;
-  -webkit-animation: extendLine 1s 1s; /* Safari 4.0 - 8.0 */
-  animation: extendLine 0.5s 1s;
+  -webkit-animation: extendLine 0.5s 0s; /* Safari 4.0 - 8.0 */
+  animation: extendLine 0.5s 0s;
+  -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
 
@@ -70,3 +93,20 @@ p {
   100% {height: 300px}
 }
 
+.hiddenline {
+  -webkit-animation: hideLine 0.5s 0.5s;
+  animation: hideLine 0.5s 0.5s;
+  -webkit-animation-fill-mode: backwards;
+  animation-fill-mode: backwards;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes hideLine {
+  0%   {height: 300px}
+  100% {height: 0px}
+}
+
+@keyframes hideLine {
+  0%   {height: 300px}
+  100% {height: 0px}
+}
