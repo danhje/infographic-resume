@@ -12,7 +12,7 @@ import { PopoverComponent } from './popover/popover.component';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   @ViewChild('popover', {read: ViewContainerRef, static: true}) entry: ViewContainerRef;
 
   constructor(private componentFactoryResolver: ComponentFactoryResolver, private renderer: Renderer2) { }
@@ -43,6 +43,8 @@ export class AppComponent implements OnInit {
     (popoverRef.instance as PopoverComponent).popoverLeft = this.getOffsetLeft(target) + target.offsetWidth / 2;
     (popoverRef.instance as PopoverComponent).popoverTop = this.getOffsetTop(target) + target.offsetHeight / 2 - 300;
     (popoverRef.instance as PopoverComponent).selfComponentRef = popoverRef;
+    (popoverRef.instance as PopoverComponent).popoverTitle = target.getAttribute('popoverTitle');
+    (popoverRef.instance as PopoverComponent).popoverDescription = target.getAttribute('popoverDescription');
     // 300 is the height of popover.
   }
 }

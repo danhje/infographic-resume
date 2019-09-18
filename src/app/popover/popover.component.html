@@ -1,11 +1,11 @@
 <div
   class="line"
-  [ngClass]="{hiddenline: !visible}"
+  [ngClass]="{visibleline: visible, hiddenline: !visible}"
   [style.background-color]="popoverColor"></div>
 <div
   class="infobox"
-  [ngClass]="{hiddeninfobox: !visible}">
-  <h1><span class="infoboxtitle" [style.background-color]="popoverColor">Her er tittel. Den kan være lang. Kjempelang.</span></h1>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam a ultrices odio. Mauris iaculis pharetra gravida. Praesent commodo sit amet mauris vel aliquam. Integer egestas molestie magna, tempus auctor erat aliquam et. Morbi vehicula, lectus ac gravida faucibus, odio sem semper risus, ut maximus odio justo at turpis. Donec faucibus.</p>
+  [ngClass]="{visibleinfobox: visible, hiddeninfobox: !visible}">
+  <h1><span class="infoboxtitle" [style.background-color]="popoverColor">{{popoverTitle}}</span></h1>
+  <p><span>{{popoverDescription}}</span></p>
 
 </div>

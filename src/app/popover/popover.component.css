@@ -1,7 +1,5 @@
 :host {
   position: absolute;
-  margin-left: 0px;
-  margin-top: 0px;
   width: 300px;
   height: 300px;
   z-index: 99;
@@ -14,6 +12,9 @@
   width: 300px;
   height: 250px;
   clip-path: inset(0% 100% 100% 0%);
+}
+
+.visibleinfobox {
   -webkit-animation: revealInfoBox 0.5s 0.5s;
   animation: revealInfoBox 0.5s 0.5s;
   -webkit-animation-fill-mode: forwards;
@@ -22,12 +23,12 @@
 
 /* Safari 4.0 - 8.0 */
 @-webkit-keyframes revealInfoBox {
-  0%   {clip-path: inset(0% 100% 100% 0%)}
+  0%   {clip-path: inset(0% 100% 0% 0%)}
   100% {clip-path: inset(0% 0% 0% 0%)}
 }
 
 @keyframes revealInfoBox {
-  0%   {clip-path: inset(0% 100% 100% 0%)}
+  0%   {clip-path: inset(0% 100% 0% 0%)}
   100% {clip-path: inset(0% 0% 0% 0%)}
 }
 
@@ -41,12 +42,12 @@
 /* Safari 4.0 - 8.0 */
 @-webkit-keyframes hideInfoBox {
   0%   {clip-path: inset(0% 0% 0% 0%)}
-  100% {clip-path: inset(0% 100% 100% 0%)}
+  100% {clip-path: inset(0% 100% 0% 0%)}
 }
 
 @keyframes hideInfoBox {
   0%   {clip-path: inset(0% 0% 0% 0%)}
-  100% {clip-path: inset(0% 100% 100% 0%)}
+  100% {clip-path: inset(0% 100% 0% 0%)}
 }
 
 h1 {
@@ -64,9 +65,12 @@ h1 span {
 p {
   margin: 0px;
   color: #eee;
-  background-color: rgba(50, 54, 57, 0.5);
   font-size: 12px;
   pointer-events: auto;
+}
+
+p span {
+  background-color: rgba(50, 54, 57, 0.5);
 }
 
 .line {
@@ -76,6 +80,9 @@ p {
   width: 1px;
   height: 0px;
   background-color: #fd6551;
+}
+
+.visibleline {
   -webkit-animation: extendLine 0.5s 0s; /* Safari 4.0 - 8.0 */
   animation: extendLine 0.5s 0s;
   -webkit-animation-fill-mode: forwards;

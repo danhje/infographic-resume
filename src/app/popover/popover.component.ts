@@ -6,13 +6,14 @@ import { Component, Input, ElementRef, HostListener, HostBinding, OnInit, ViewCo
   styleUrls: ['./popover.component.css']
 })
 export class PopoverComponent implements OnInit {
-  @Input() popoverColor = '';
+  popoverColor = '';
+  popoverTitle = '';
+  popoverDescription = '';
   visible = true;
   shouldIgnoreClickout = true;
   startupTimer: any;
   destroyTimer: any;
   selfComponentRef: any;
-
   @HostBinding('style.left.px') popoverLeft = 0;
   @HostBinding('style.top.px') popoverTop = 0;
 
@@ -20,10 +21,11 @@ export class PopoverComponent implements OnInit {
   }
 
   startTimer() {
+    // Ignore clickout while the popover is animating.
     this.startupTimer = setInterval(() => {
       this.shouldIgnoreClickout = false;
       clearInterval(this.startupTimer);
-    }, 100);
+    }, 1000);
   }
 
   ngOnInit() {
@@ -32,10 +34,7 @@ export class PopoverComponent implements OnInit {
 
   @HostListener('document:click', ['$event'])
   clickout(event) {
-    if (this.eRef.nativeElement.contains(event.target)) {
-      console.log('clicked inside');
-    } else {
-      console.log('clicked outside');
+    if (!this.eRef.nativeElement.contains(event.target)) {
       if (!this.shouldIgnoreClickout) {
         this.visible = false;
         this.destroyAfterDelay();
@@ -44,6 +43,7 @@ export class PopoverComponent implements OnInit {
   }
 
   destroyAfterDelay() {
+    // Wait for animation before destroying.
     this.destroyTimer = setInterval(() => {
       this.selfComponentRef.destroy();
       clearInterval(this.destroyTimer);
