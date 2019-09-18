@@ -36,15 +36,18 @@ export class AppComponent {
   childElementClicked(event: MouseEvent) {
     const target = (event.target as HTMLElement);
 
-    const componentFactory = this.componentFactoryResolver.resolveComponentFactory(PopoverComponent);
-    const viewContainerRef = this.entry;
-    const popoverRef = viewContainerRef.createComponent(componentFactory);
-    (popoverRef.instance as PopoverComponent).popoverColor = window.getComputedStyle(target).backgroundColor;
-    (popoverRef.instance as PopoverComponent).popoverLeft = this.getOffsetLeft(target) + target.offsetWidth / 2;
-    (popoverRef.instance as PopoverComponent).popoverTop = this.getOffsetTop(target) + target.offsetHeight / 2 - 300;
-    (popoverRef.instance as PopoverComponent).selfComponentRef = popoverRef;
-    (popoverRef.instance as PopoverComponent).popoverTitle = target.getAttribute('popoverTitle');
-    (popoverRef.instance as PopoverComponent).popoverDescription = target.getAttribute('popoverDescription');
-    // 300 is the height of popover.
+    if (target.getAttribute('popoverTitle') && target.getAttribute('popoverDescription')) {
+      const componentFactory = this.componentFactoryResolver.resolveComponentFactory(PopoverComponent);
+      const viewContainerRef = this.entry;
+      const popoverRef = viewContainerRef.createComponent(componentFactory);
+      (popoverRef.instance as PopoverComponent).popoverColor = window.getComputedStyle(target).backgroundColor;
+      (popoverRef.instance as PopoverComponent).popoverLeft = this.getOffsetLeft(target) + target.offsetWidth / 2;
+      (popoverRef.instance as PopoverComponent).popoverTop = this.getOffsetTop(target) + 20 - 300; // 300 is the height of popover.
+      (popoverRef.instance as PopoverComponent).selfComponentRef = popoverRef;
+      (popoverRef.instance as PopoverComponent).popoverTitle = target.getAttribute('popoverTitle');
+      (popoverRef.instance as PopoverComponent).popoverDescription = target.getAttribute('popoverDescription');
+    } else {
+      console.log('The element that was clicked is missing either popoverTitle or popoverDescription, or both.');
+    }
   }
 }
