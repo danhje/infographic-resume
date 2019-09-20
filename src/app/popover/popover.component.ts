@@ -1,4 +1,4 @@
-import { Component, Input, ElementRef, HostListener, HostBinding, OnInit, ViewContainerRef } from '@angular/core';
+import { Component, ElementRef, HostListener, HostBinding, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-popover',

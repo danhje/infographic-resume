@@ -5,7 +5,6 @@
 <div
   class="infobox"
   [ngClass]="{visibleinfobox: visible, hiddeninfobox: !visible}">
-  <h1><span class="infoboxtitle" [style.background-color]="popoverColor">{{popoverTitle}}</span></h1>
+  <h1><span [style.background-color]="popoverColor">{{popoverTitle}}</span></h1>
   <p><span>{{popoverDescription}}</span></p>
-
 </div>

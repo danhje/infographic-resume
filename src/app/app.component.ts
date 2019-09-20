@@ -2,9 +2,7 @@ import { Component,
          ViewChild,
          ViewContainerRef,
          ComponentFactoryResolver,
-         Renderer2,
-         ElementRef,
-         OnInit} from '@angular/core';
+         Renderer2} from '@angular/core';
 import { PopoverComponent } from './popover/popover.component';
 
 @Component({
