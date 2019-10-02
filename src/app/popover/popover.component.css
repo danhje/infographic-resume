@@ -63,7 +63,7 @@ h1 span {
 }
 
 p {
-  margin: 0px;
+  margin: 3px 0px 0px 0px;
   color: #eee;
   font-size: 12px;
   pointer-events: auto;

@@ -4,6 +4,7 @@ import { Component,
          ComponentFactoryResolver,
          Renderer2} from '@angular/core';
 import { PopoverComponent } from './popover/popover.component';
+import { TagPlaceholder } from '@angular/compiler/src/i18n/i18n_ast';
 
 @Component({
   selector: 'app-root',
@@ -31,19 +32,28 @@ export class AppComponent {
     return offsetLeft;
   }
 
+  firstParentWithPopoverInfo(elem: HTMLElement) {
+    console.log('Chedking element ' + elem);
+    if (elem.getAttribute('popoverTitle') && elem.getAttribute('popoverDescription')) {
+      return elem;
+    }
+    return this.firstParentWithPopoverInfo(elem.parentElement);
+  }
+
   childElementClicked(event: MouseEvent) {
     const target = (event.target as HTMLElement);
+    const elem = this.firstParentWithPopoverInfo(target);
 
-    if (target.getAttribute('popoverTitle') && target.getAttribute('popoverDescription')) {
+    if (elem) {
       const componentFactory = this.componentFactoryResolver.resolveComponentFactory(PopoverComponent);
       const viewContainerRef = this.entry;
       const popoverRef = viewContainerRef.createComponent(componentFactory);
-      (popoverRef.instance as PopoverComponent).popoverColor = window.getComputedStyle(target).backgroundColor;
-      (popoverRef.instance as PopoverComponent).popoverLeft = this.getOffsetLeft(target) + target.offsetWidth / 2;
-      (popoverRef.instance as PopoverComponent).popoverTop = this.getOffsetTop(target) + 20 - 300; // 300 is the height of popover.
+      (popoverRef.instance as PopoverComponent).popoverColor = window.getComputedStyle(elem).backgroundColor;
+      (popoverRef.instance as PopoverComponent).popoverLeft = this.getOffsetLeft(elem) + elem.offsetWidth / 2;
+      (popoverRef.instance as PopoverComponent).popoverTop = this.getOffsetTop(elem) + 20 - 300; // 300 is the height of popover.
       (popoverRef.instance as PopoverComponent).selfComponentRef = popoverRef;
-      (popoverRef.instance as PopoverComponent).popoverTitle = target.getAttribute('popoverTitle');
-      (popoverRef.instance as PopoverComponent).popoverDescription = target.getAttribute('popoverDescription');
+      (popoverRef.instance as PopoverComponent).popoverTitle = elem.getAttribute('popoverTitle');
+      (popoverRef.instance as PopoverComponent).popoverDescription = elem.getAttribute('popoverDescription');
     } else {
       console.log('The element that was clicked is missing either popoverTitle or popoverDescription, or both.');
     }
