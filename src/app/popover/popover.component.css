@@ -1,9 +1,17 @@
 :host {
   position: absolute;
+  bottom: 0;
   width: 300px;
-  height: 300px;
+  height: 600px;
   z-index: 99;
   pointer-events: none;
+}
+
+.popoverWrapper {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  bottom: 0px;
 }
 
 .line {
@@ -32,7 +40,6 @@
   margin-top: 0px;
   margin-left: 1px;
   width: 300px;
-  height: 250px;
   clip-path: inset(0% 100% 100% 0%);
 }
 
@@ -48,6 +55,11 @@
   animation: hideInfoBox 0.5s 0s;
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
+}
+
+.separator {
+  width: 10px;
+  height: 60px;
 }
 
 h1 {
@@ -70,29 +82,29 @@ p {
 }
 
 p span {
-  background-color: rgba(50, 54, 57, 0.5);
+  background-color: rgba(50, 54, 57, 0.7);
 }
 
 /* Safari 4.0 - 8.0 */
 @-webkit-keyframes extendLine {
-  0%   {height: 0px}
-  100% {height: 300px}
+  0%   {height: 0%}
+  100% {height: 100%}
 }
 
 @keyframes extendLine {
-  0%   {height: 0px}
-  100% {height: 300px}
+  0%   {height: 0%}
+  100% {height: 100%}
 }
 
 /* Safari 4.0 - 8.0 */
 @-webkit-keyframes hideLine {
-  0%   {height: 300px}
-  100% {height: 0px}
+  0%   {height: 100%}
+  100% {height: 0%}
 }
 
 @keyframes hideLine {
-  0%   {height: 300px}
-  100% {height: 0px}
+  0%   {height: 100%}
+  100% {height: 0%}
 }
 
 /* Safari 4.0 - 8.0 */

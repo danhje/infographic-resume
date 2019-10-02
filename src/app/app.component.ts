@@ -50,7 +50,8 @@ export class AppComponent {
       const popoverRef = viewContainerRef.createComponent(componentFactory);
       (popoverRef.instance as PopoverComponent).popoverColor = window.getComputedStyle(elem).backgroundColor;
       (popoverRef.instance as PopoverComponent).popoverLeft = this.getOffsetLeft(elem) + elem.offsetWidth / 2;
-      (popoverRef.instance as PopoverComponent).popoverTop = this.getOffsetTop(elem) + 20 - 300; // 300 is the height of popover.
+      (popoverRef.instance as PopoverComponent).popoverTop = this.getOffsetTop(elem) - 600 + 30;
+      // 600 is the height of popoverComponent:host. 20 is added because of margins, clip-paths etc.
       (popoverRef.instance as PopoverComponent).selfComponentRef = popoverRef;
       (popoverRef.instance as PopoverComponent).popoverTitle = elem.getAttribute('popoverTitle');
       (popoverRef.instance as PopoverComponent).popoverDescription = elem.getAttribute('popoverDescription');
