@@ -25,7 +25,7 @@ export class PopoverComponent implements OnInit {
     this.startupTimer = setInterval(() => {
       this.shouldIgnoreClickout = false;
       clearInterval(this.startupTimer);
-    }, 1000);
+    }, 100);
   }
 
   ngOnInit() {

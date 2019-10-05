@@ -1,0 +1,15 @@
+:host {
+  display: block;
+  position: static;
+}
+
+.label {
+  display: inline-block;
+  background-color: pink;
+}
+
+.level {
+  display: inline-block;
+  background-color: pink;
+}
+

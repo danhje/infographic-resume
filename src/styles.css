@@ -9,14 +9,9 @@ h1 {
   font-weight: 100;
 }
 
-#wrapper {
-  width: 960px;
-  margin: 0px auto 0px auto;
-  padding: 1rem;
-}
-
 .component-title {
   color: #eee;
+  margin: 0px;
 }
 
 #maintitle {
