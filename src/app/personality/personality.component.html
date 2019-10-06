@@ -1,6 +1,62 @@
 <p class="component-title">Personality</p>
 
-<div id="centered">
-  <span class="label">Openness</span>
-  <span class="level">69%</span>
+<div class="container">
+  <div></div><div></div>
+
+    <div class="label openness"
+          (mouseenter)="onMouseenter('openness')"
+          (mouseleave)="onMouseleave('openness')"
+          (click)="onLabelClick(opennessLevel)"><span>Openness</span></div>
+    <div class="level openness"
+         [ngClass]="{hovered: opennessHovered}"
+         (click)="onClick($event)"
+         popoverTitle="Openness to experience: 69%"
+         popoverDescription="Openness is a general appreciation for art, emotion, adventure, unusual ideas, imagination, curiosity, and variety of experience. People who are open to experience are intellectually curious, open to emotion, sensitive to beauty and willing to try new things. They tend to be, when compared to closed people, more creative and more aware of their feelings."
+         #opennessLevel></div>
+
+    <div class="label conscientiousness"
+          (mouseenter)="onMouseenter('conscientiousness')"
+          (mouseleave)="onMouseleave('conscientiousness')"
+          (click)="onLabelClick(conscientiousnessLevel)"><span>Conscientiousness</span></div>
+    <div class="level conscientiousness"
+          [ngClass]="{hovered: conscientiousnessHovered}"
+          (click)="onClick($event)"
+          popoverTitle="Conscientiousness: 79%"
+          popoverDescription="Conscientiousness is the personality trait of being careful, or diligent. Conscientiousness implies a desire to do a task well, and to take obligations to others seriously. Conscientious people tend to be efficient and organized as opposed to easy-going and disorderly. They exhibit a tendency to show self-discipline, act dutifully, and aim for achievement; they display planned rather than spontaneous behavior; and they are generally dependable."
+          #conscientiousnessLevel></div>
+
+    <div class="label extraversion"
+          (mouseenter)="onMouseenter('extraversion')"
+          (mouseleave)="onMouseleave('extraversion')"
+          (click)="onLabelClick(extraversionLevel)"><span>Extraversion</span></div>
+    <div class="level extraversion"
+          [ngClass]="{hovered: extraversionHovered}"
+          (click)="onClick($event)"
+          popoverTitle="Extraversion: 27%"
+          popoverDescription="Extraversion is characterized by breadth of activities (as opposed to depth), surgency from external activity/situations, and energy creation from external means. The trait is marked by pronounced engagement with the external world. Extraverts enjoy interacting with people, and are often perceived as full of energy. They tend to be enthusiastic, action-oriented individuals."
+          #extraversionLevel></div>
+
+    <div class="label agreeableness"
+          (mouseenter)="onMouseenter('agreeableness')"
+          (mouseleave)="onMouseleave('agreeableness')"
+          (click)="onLabelClick(agreeablenessLevel)"><span>Agreeableness</span></div>
+    <div class="level agreeableness"
+          [ngClass]="{hovered: agreeablenessHovered}"
+          (click)="onClick($event)"
+          popoverTitle="Agreeableness: 69%"
+          popoverDescription="The agreeableness trait reflects individual differences in general concern for social harmony. Agreeable individuals value getting along with others. They are generally considerate, kind, generous, trusting and trustworthy, helpful, and willing to compromise their interests with others. Agreeable people also have an optimistic view of human nature."
+          #agreeablenessLevel></div>
+
+    <div class="label neuroticism"
+          (mouseenter)="onMouseenter('neuroticism')"
+          (mouseleave)="onMouseleave('neuroticism')"
+          (click)="onLabelClick(neuroticismLevel)"><span>Neuroticism</span></div>
+    <div class="level neuroticism"
+          [ngClass]="{hovered: neuroticismHovered}"
+          (click)="onClick($event)"
+          popoverTitle="Neuroticism: 17%"
+          popoverDescription="Neuroticism is the tendency to experience negative emotions, such as anger, anxiety, or depression. It is sometimes called emotional instability, or is reversed and referred to as emotional stability. Those who score high in neuroticism are emotionally reactive and vulnerable to stress, also tending to be flippant in the way they express emotion."
+          #neuroticismLevel></div>
+
+  <div></div><div></div>
 </div>

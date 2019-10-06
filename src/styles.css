@@ -12,6 +12,7 @@ h1 {
 .component-title {
   color: #eee;
   margin: 0px;
+  font-size: 18px;
 }
 
 #maintitle {
@@ -19,4 +20,3 @@ h1 {
   text-align: center;
   color: #eee;
 }
-

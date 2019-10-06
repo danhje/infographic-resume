@@ -1,15 +1,97 @@
 :host {
-  display: block;
-  position: static;
+  overflow: hidden;
+}
+
+span {
+  color: #323639;
+  font-size: 13px;
+  font-weight: normal;
+  pointer-events: none;
+  padding: 2px;
+  line-height: 21px;
+  align-items: center;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: max-content auto;
+  grid-template-rows: 40px max-content max-content max-content max-content max-content auto;
+  height: 100%;
+  width: 100%;
 }
 
 .label {
-  display: inline-block;
-  background-color: pink;
+  margin: 0px 3px 3px 0px;
+  padding: 0px;
+  justify-self: end;
 }
 
 .level {
-  display: inline-block;
-  background-color: pink;
+  margin: 0px 0px 3px 0px;
+  padding: 2px;
+  width: 69px;
+  justify-self: start;
+  max-width: 100%;
+  transition: 0.1s;
+  transition-timing-function: ease-out;
 }
 
+.openness {
+  background-color: #57a3c0;
+}
+
+.openness.level {
+  width: 138px;
+}
+
+.openness.level.hovered, .openness.level:hover {
+  width: 153px;
+}
+
+.conscientiousness {
+  background-color: #94c048;
+}
+
+.conscientiousness.level {
+  width: 158px;
+}
+
+.conscientiousness.level.hovered, .conscientiousness.level:hover {
+  width: 173px;
+}
+
+.extraversion {
+  background-color: #ffc545;
+}
+
+.extraversion.level {
+  width: 54px;
+}
+
+.extraversion.level.hovered, .extraversion.level:hover {
+  width: 69px;
+}
+
+.agreeableness {
+  background-color: #f58946;
+}
+
+.agreeableness.level {
+  width: 138px;
+}
+
+.agreeableness.level.hovered, .agreeableness.level:hover {
+  width: 153px;
+}
+
+.neuroticism {
+  background-color: #fd6551;
+}
+
+.neuroticism.level {
+  width: 34px;
+}
+
+.neuroticism.level.hovered, .neuroticism.level:hover {
+  width: 49px;
+}
