@@ -3,7 +3,7 @@
 }
 
 span {
-  color: #323639;
+  color: var(--background-color);
   font-size: 13px;
   font-weight: normal;
   pointer-events: none;
@@ -37,7 +37,7 @@ span {
 }
 
 .openness {
-  background-color: #57a3c0;
+  background-color: var(--highlight-color-1);
 }
 
 .openness.level {
@@ -49,7 +49,7 @@ span {
 }
 
 .conscientiousness {
-  background-color: #94c048;
+  background-color: var(--highlight-color-2);
 }
 
 .conscientiousness.level {
@@ -61,7 +61,7 @@ span {
 }
 
 .extraversion {
-  background-color: #ffc545;
+  background-color: var(--highlight-color-3);
 }
 
 .extraversion.level {
@@ -73,7 +73,7 @@ span {
 }
 
 .agreeableness {
-  background-color: #f58946;
+  background-color: var(--highlight-color-4);
 }
 
 .agreeableness.level {
@@ -85,7 +85,7 @@ span {
 }
 
 .neuroticism {
-  background-color: #fd6551;
+  background-color: var(--highlight-color-5);
 }
 
 .neuroticism.level {
