@@ -1,10 +1,10 @@
 <div id="popoverWrapper">
   <div
-    id="line"
+    class="line"
     [ngClass]="{visibleline: visible, hiddenline: !visible}"
     [style.background-color]="popoverColor"></div>
   <div
-    id="infobox"
+    class="infobox"
     [ngClass]="{visibleinfobox: visible, hiddeninfobox: !visible}">
     <h1><span [style.background-color]="popoverColor">{{popoverTitle}}</span></h1>
     <p><span>{{popoverDescription}}</span></p>
