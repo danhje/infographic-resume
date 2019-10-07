@@ -15,27 +15,27 @@
 }
 
 .circle:nth-of-type(1) {
-  z-index: 3;
-  top: 10px;
-  left: 10px;
-  width: 200px;
-  height: 200px;
-  clip-path: circle(90px at 100px 100px);
+  z-index: 1;
+  top: 20px;
+  left: 20px;
+  width: 170px;
+  height: 170px;
+  clip-path: circle(75px at 85px 85px);
   background-color: #fd6551;
 }
 
 .circle:nth-of-type(1):hover {
-  clip-path: circle(100px at 100px 100px);
+  clip-path: circle(85px at 85px 85px);
 }
 
 .circle:nth-of-type(2) {
-  z-index: 4;
-  top: 180px;
-  left: 40px;
+  z-index: 2;
+  top: 50px;
+  left: 140px;
   width: 120px;
   height: 120px;
   clip-path: circle(50px at 60px 60px);
-  background-color: #57a3c0;
+  background-color: #f58946;
 }
 
 .circle:nth-of-type(2):hover {
@@ -43,31 +43,45 @@
 }
 
 .circle:nth-of-type(3) {
-  z-index: 1;
-  top: 10px;
-  left: 160px;
-  width: 140px;
-  height: 140px;
-  clip-path: circle(60px at 70px 70px);
+  z-index: 4;
+  top: 120px;
+  left: 180px;
+  width: 100px;
+  height: 100px;
+  clip-path: circle(40px at 50px 50px);
   background-color: #ffc545;
 }
 
 .circle:nth-of-type(3):hover {
-  clip-path: circle(70px at 70px 70px);
+  clip-path: circle(50px at 50px 50px);
 }
 
 .circle:nth-of-type(4) {
-  z-index: 2;
-  top: 120px;
-  left: 120px;
-  width: 180px;
-  height: 180px;
-  clip-path: circle(80px at 90px 90px);
+  z-index: 3;
+  top: 135px;
+  left: 90px;
+  width: 160px;
+  height: 160px;
+  clip-path: circle(70px at 80px 80px);
   background-color: #94c048;
 }
 
 .circle:nth-of-type(4):hover {
-  clip-path: circle(90px at 90px 90px);
+  clip-path: circle(80px at 80px 80px);
+}
+
+.circle:nth-of-type(5) {
+  z-index: 5;
+  top: 150px;
+  left: 10px;
+  width: 120px;
+  height: 120px;
+  clip-path: circle(50px at 60px 60px);
+  background-color: #57a3c0;
+}
+
+.circle:nth-of-type(5):hover {
+  clip-path: circle(60px at 60px 60px);
 }
 
 svg {
