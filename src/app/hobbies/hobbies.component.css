@@ -79,3 +79,7 @@ svg {
   left: 0;
   right: 0;
 }
+
+svg g {
+  stroke: #323639;
+}
