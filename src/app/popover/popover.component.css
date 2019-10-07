@@ -7,14 +7,14 @@
   pointer-events: none;
 }
 
-.popoverWrapper {
+#popoverWrapper {
   position: absolute;
   width: 100%;
   height: auto;
   bottom: 0px;
 }
 
-.line {
+#line {
   position: absolute;
   bottom: 0px;
   margin-left: 0px;
@@ -36,7 +36,7 @@
   animation-fill-mode: backwards;
 }
 
-.infobox {
+#infobox {
   margin-top: 0px;
   margin-left: 1px;
   width: 300px;
@@ -57,7 +57,7 @@
   animation-fill-mode: forwards;
 }
 
-.separator {
+#separator {
   width: 10px;
   height: 60px;
 }
@@ -69,7 +69,7 @@ h1 {
   font-size: 16px;
 }
 
-h1 span {
+h1 > span {
   padding: 0px 2px 2px 0px;
   pointer-events: auto;
 }
@@ -81,7 +81,7 @@ p {
   pointer-events: auto;
 }
 
-p span {
+p > span {
   background-color: rgba(50, 54, 57, 0.7); /* #323639 + alpha */
 }
 
@@ -128,4 +128,3 @@ p span {
   0%   {clip-path: inset(0% 0% 0% 0%)}
   100% {clip-path: inset(0% 100% 0% 0%)}
 }
-

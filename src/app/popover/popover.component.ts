@@ -21,7 +21,7 @@ export class PopoverComponent implements OnInit {
   }
 
   startTimer() {
-    // Ignore clickout while the popover is animating.
+    // Ignore clickout that happen immediately after init.
     this.startupTimer = setInterval(() => {
       this.shouldIgnoreClickout = false;
       clearInterval(this.startupTimer);
@@ -43,11 +43,11 @@ export class PopoverComponent implements OnInit {
   }
 
   destroyAfterDelay() {
-    // Wait for animation before destroying.
+    // Wait for animation to finish before destroying.
     this.destroyTimer = setInterval(() => {
       this.selfComponentRef.destroy();
       clearInterval(this.destroyTimer);
-    }, 1000);
+    }, 1100);
   }
 
 }
