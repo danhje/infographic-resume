@@ -1,0 +1,38 @@
+:host {
+  overflow: hidden;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: auto max-content auto;
+  width: 100%;
+}
+
+.skill-element {
+  display: inline-block;
+  margin: 0px 6px 0px 6px;
+}
+
+.skill-name-wrapper {
+  display: inline-block;
+  top: 0px;
+  height: 100px;
+  width: 20px;
+  vertical-align: bottom;
+}
+
+.skill-name {
+  left: 100;
+  bottom: 0px;
+  width: 250px;
+  transform: translateY(80px) rotate(-35deg);
+  transform-origin: left top;
+  color: var(--highlight-color-1);
+}
+
+.skill-level {
+  display: block;
+  width: 20px;
+}
+
+

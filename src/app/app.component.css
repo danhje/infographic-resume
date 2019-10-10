@@ -1,8 +1,12 @@
 #gridcontainer {
   display: grid;
   grid-template-columns: 300px 300px 300px;
-  grid-template-rows: 300px;
+  grid-template-rows: 300px 300px;
   grid-gap: 20px;
   width: 960px;
   margin: 0px auto 0px auto;
+}
+
+app-skillprofile {
+  grid-column: auto / span 2;
 }

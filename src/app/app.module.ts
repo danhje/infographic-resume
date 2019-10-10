@@ -5,13 +5,15 @@ import { AppComponent } from './app.component';
 import { HobbiesComponent } from './hobbies/hobbies.component';
 import { PopoverComponent } from './popover/popover.component';
 import { PersonalityComponent } from './personality/personality.component';
+import { SkillprofileComponent } from './skillprofile/skillprofile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PopoverComponent,
     HobbiesComponent,
-    PersonalityComponent
+    PersonalityComponent,
+    SkillprofileComponent
   ],
   imports: [
     BrowserModule,
