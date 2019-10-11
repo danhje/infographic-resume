@@ -5,13 +5,11 @@
 .circle {
   position: absolute;
   opacity: 1;
-  transition: 0.1s;
-  transition-timing-function: ease-out;
+  transition: clip-path 0.1s ease-out 0s;
 }
 
 .circle:hover {
-  transition: 0.1s;
-  transition-timing-function: ease-out;
+  transition: clip-path 0.1s ease-out 0s;
 }
 
 .circle:nth-of-type(1) {

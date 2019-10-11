@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
@@ -8,21 +8,27 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class SkillprofileComponent {
   skills: { skillname: string, level: number }[] = [
-    { skillname: 'Marketing', level: 50 },
+    { skillname: 'Social marketing', level: 50 },
     { skillname: 'Project management', level: 60 },
     { skillname: 'Machine learning', level: 90 },
-    { skillname: 'Math', level: 100 },
-    { skillname: 'Electronics', level: 105 },
+    { skillname: 'Mathematics', level: 100 },
+    { skillname: 'Electrical engineering', level: 105 },
+    { skillname: 'Data analysis', level: 115 },
+    { skillname: 'Data visualization', level: 130 },
+    { skillname: 'Scientiffic programming', level: 140 },
+    { skillname: 'Web developement', level: 170 },
+    { skillname: 'iOS developement', level: 130 },
+    { skillname: 'Visual design', level: 120 },
     { skillname: 'Energy engineering', level: 110 },
-    { skillname: 'Developement', level: 170 },
-    { skillname: 'Data visualization', level: 120 },
-    { skillname: 'Visual design', level: 110 },
-    { skillname: 'Data analysis', level: 100 },
     { skillname: 'Physics', level: 90 },
     { skillname: 'Writing', level: 85 },
-    { skillname: 'Team leadership', level: 50 },
+    { skillname: 'Team leadership', level: 70 },
     { skillname: 'Cooking', level: 5 }
   ];
+  @Output() elementClicked = new EventEmitter<MouseEvent>();
+  hoveredItemIndex = -1;
+
+  constructor(private sanitizer: DomSanitizer) {}
 
   colorForSkill(skill: { skillname: string, level: number }) {
     if (skill.level < 40) {
@@ -38,5 +44,7 @@ export class SkillprofileComponent {
     }
   }
 
-  constructor(private sanitizer: DomSanitizer) {}
+  onClick(event: MouseEvent) {
+    this.elementClicked.emit(event);
+  }
 }

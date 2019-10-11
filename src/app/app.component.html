@@ -5,7 +5,7 @@
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 <div id="gridcontainer">
-  <app-skillprofile></app-skillprofile>
+  <app-skillprofile (elementClicked)="childElementClicked($event)"></app-skillprofile>
   <app-hobbies class="component" (elementClicked)="childElementClicked($event)"></app-hobbies>
   <app-personality class="component" (elementClicked)="childElementClicked($event)"></app-personality>
 </div>

@@ -1,15 +1,25 @@
-<p class="component-title">Skill profile / core skills</p>
+<p class="component-title">Core Skills</p>
 
 <div class="container">
 
   <div></div>
 
   <div>
-    <div class="skill-element" *ngFor="let skill of skills">
+    <div class="skill-element" *ngFor="let skill of skills;let i = index;">
       <div class="skill-name-wrapper">
-        <div class="skill-name">{{skill.skillname}}</div>
+        <div
+          class="skill-name"
+          (mouseenter)="hoveredItemIndex = i"
+          (mouseleave)="hoveredItemIndex = -1"><span>{{skill.skillname}}</span></div>
       </div>
-      <div class="skill-level" [style.height.px]="skill.level" [style.backgroundColor]="colorForSkill(skill)"></div>
+      <div
+        class="skill-level"
+        (click)="onClick($event)"
+        [style.height.px]="skill.level"
+        [style.backgroundColor]="colorForSkill(skill)"
+        [attr.popoverTitle]="skill.skillname"
+        [attr.popoverDescription]="skill.skillname"
+        [ngClass]="{'skill-level-hovered': i === hoveredItemIndex}"></div>
     </div>
   </div>
 

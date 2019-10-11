@@ -32,8 +32,7 @@ span {
   width: 69px;
   justify-self: start;
   max-width: 100%;
-  transition: 0.1s;
-  transition-timing-function: ease-out;
+  transition: width 0.1s ease-out 0s;
 }
 
 .openness {

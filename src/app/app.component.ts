@@ -4,7 +4,6 @@ import { Component,
          ComponentFactoryResolver,
          Renderer2} from '@angular/core';
 import { PopoverComponent } from './popover/popover.component';
-import { TagPlaceholder } from '@angular/compiler/src/i18n/i18n_ast';
 
 @Component({
   selector: 'app-root',
@@ -48,10 +47,11 @@ export class AppComponent {
       const componentFactory = this.componentFactoryResolver.resolveComponentFactory(PopoverComponent);
       const viewContainerRef = this.entry;
       const popoverRef = viewContainerRef.createComponent(componentFactory);
+      const height = parseInt(window.getComputedStyle(elem).height, 10);
+      const offset = height ? Math.min(20, height) : 20; // Offset is due to margins, scaling transitions etc.
       (popoverRef.instance as PopoverComponent).popoverColor = window.getComputedStyle(elem).backgroundColor;
       (popoverRef.instance as PopoverComponent).popoverLeft = this.getOffsetLeft(elem) + elem.offsetWidth / 2;
-      (popoverRef.instance as PopoverComponent).popoverTop = this.getOffsetTop(elem) - 600 + 20;
-      // 600 is the height of popoverComponent:host. 20 is added because of margins, clip-paths etc.
+      (popoverRef.instance as PopoverComponent).popoverTop = this.getOffsetTop(elem) - 600 + offset;
       (popoverRef.instance as PopoverComponent).selfComponentRef = popoverRef;
       (popoverRef.instance as PopoverComponent).popoverTitle = elem.getAttribute('popoverTitle');
       (popoverRef.instance as PopoverComponent).popoverDescription = elem.getAttribute('popoverDescription');

@@ -76,7 +76,7 @@ p {
 }
 
 p > span {
-  background-color: rgba(50, 54, 57, 0.7); /* #323639 + alpha */
+  background-color: rgba(50, 54, 57, 0.8); /* #323639 + alpha */
 }
 
 /* Safari 4.0 - 8.0 */
