@@ -1,15 +1,5 @@
-:host {
-  overflow: hidden;
-}
-
 span {
   pointer-events: none;
-}
-
-.container {
-  display: grid;
-  grid-template-columns: 0px max-content auto;
-  width: 100%;
 }
 
 .skill-element {
@@ -21,7 +11,7 @@ span {
   display: inline-block;
   top: 0px;
   height: 80px;
-  width: 20px;
+  width: 18px;
   vertical-align: bottom;
 }
 
@@ -32,19 +22,19 @@ span {
   transform: translateY(65px) rotate(-35deg);
   transform-origin: left top;
   color: var(--highlight-color-1);
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .skill-level {
   display: block;
-  width: 20px;
-  transition: transform 0.1s ease-out 0s;
-}
-
-.skill-level-hovered {
-  transform: scale(1.0, 1.2);
+  width: 18px;
+  transition: transform 0.1s ease-out;
 }
 
 .skill-level:hover {
+  transform: scale(1.0, 1.2);
+}
+
+.skill-level-hovered {
   transform: scale(1.0, 1.2);
 }

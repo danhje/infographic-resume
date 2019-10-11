@@ -38,17 +38,17 @@
   margin-left: 1px;
   width: 300px;
   clip-path: inset(0% 100% 0% 0%);
-  transition: clip-path 0.5s ease-out 0.5s;
+  transition: clip-path 0.5s linear 0.5s;
 }
 
 .visibleinfobox {
   clip-path: inset(0% 0% 0% 0%);
-  transition: clip-path 0.5s ease-out 0.5s;
+  transition: clip-path 0.5s linear 0.5s;
 }
 
 .hiddeninfobox {
   clip-path: inset(0% 100% 0% 0%);
-  transition: clip-path 0.5s ease-out 0s;
+  transition: clip-path 0.5s linear 0s;
 }
 
 #separator {

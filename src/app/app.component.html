@@ -2,12 +2,11 @@
 
 <template #popover></template>
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
 <div id="gridcontainer">
+  <app-timeline (elementClicked)="childElementClicked($event)"></app-timeline>
   <app-skillprofile (elementClicked)="childElementClicked($event)"></app-skillprofile>
   <app-hobbies class="component" (elementClicked)="childElementClicked($event)"></app-hobbies>
   <app-personality class="component" (elementClicked)="childElementClicked($event)"></app-personality>
 </div>
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div id="spacer"></div>

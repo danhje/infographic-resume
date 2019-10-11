@@ -8,8 +8,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class SkillprofileComponent {
   skills: { skillname: string, level: number }[] = [
-    { skillname: 'Social marketing', level: 50 },
-    { skillname: 'Project management', level: 60 },
+    { skillname: 'Team leadership', level: 70 },
     { skillname: 'Machine learning', level: 90 },
     { skillname: 'Mathematics', level: 100 },
     { skillname: 'Electrical engineering', level: 105 },
@@ -22,13 +21,16 @@ export class SkillprofileComponent {
     { skillname: 'Energy engineering', level: 110 },
     { skillname: 'Physics', level: 90 },
     { skillname: 'Writing', level: 85 },
-    { skillname: 'Team leadership', level: 70 },
     { skillname: 'Cooking', level: 5 }
   ];
   @Output() elementClicked = new EventEmitter<MouseEvent>();
   hoveredItemIndex = -1;
 
   constructor(private sanitizer: DomSanitizer) {}
+
+  onSkillNameClick(elementToClick: HTMLElement) {
+    elementToClick.click();
+  }
 
   colorForSkill(skill: { skillname: string, level: number }) {
     if (skill.level < 40) {

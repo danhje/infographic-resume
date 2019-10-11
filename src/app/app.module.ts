@@ -6,6 +6,7 @@ import { HobbiesComponent } from './hobbies/hobbies.component';
 import { PopoverComponent } from './popover/popover.component';
 import { PersonalityComponent } from './personality/personality.component';
 import { SkillprofileComponent } from './skillprofile/skillprofile.component';
+import { TimelineComponent } from './timeline/timeline.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { SkillprofileComponent } from './skillprofile/skillprofile.component';
     PopoverComponent,
     HobbiesComponent,
     PersonalityComponent,
-    SkillprofileComponent
+    SkillprofileComponent,
+    TimelineComponent
   ],
   imports: [
     BrowserModule,

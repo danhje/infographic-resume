@@ -7,6 +7,14 @@
   margin: 0px auto 0px auto;
 }
 
-app-skillprofile {
+/* app-skillprofile {
   grid-column: auto / span 2;
+} */
+
+app-timeline {
+  grid-column: 1 / span 3;
+}
+
+#spacer {
+  height: 100px;
 }
