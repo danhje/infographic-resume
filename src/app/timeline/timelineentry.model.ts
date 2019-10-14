@@ -1,5 +1,6 @@
 export class TimelineEntry {
   public type: string;
+  public primary: boolean;
   public title: string;
   public description: string;
   public startNumber: number;
@@ -9,12 +10,13 @@ export class TimelineEntry {
   public xEnd: number;
   public width: number;
 
-  constructor(type: string, title: string, description: string, start: string, end: string) {
+  constructor(type: string, primary: boolean, title: string, description: string, start: string, end: string) {
     this.type = type;
+    this.primary = primary;
     this.title = title;
     this.description = description;
     this.startNumber = this.datestringToNumber(start);
-    this.endNumber = this.datestringToNumber(end) + (1 / 12);
+    this.endNumber = this.datestringToNumber(end);
     this.yIndex = 0;
   }
 

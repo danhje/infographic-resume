@@ -1,18 +1,45 @@
 :host {
   position: relative;
+  overflow: hidden;
 }
 
 .timeline-entry {
   position: absolute;
-  height: 18px;
-  box-sizing: border-box;
-  padding: 1px;
-  background-clip: content-box;
-  top: 100px;
-  background-color: var(--highlight-color-5);
-  transition: transform 0.1s ease-out;
+  height: 16px;
+  z-index: 1;
+  background-color: var(--highlight-color-1);
+  transition: transform 0.1s ease-out, box-shadow 0.1s ease-out, z-index 0.1s ease-out;
 }
 
 .timeline-entry:hover {
-  transform: scale(1.0, 1.5);
+  z-index: 2;
+  transform: scale(1.5, 1.5);
+  box-shadow: 0px 0px 6px var(--background-color);
+}
+
+#x-axis {
+  position: absolute;
+  left: 0;
+  top: 131px;
+  width: 880px;
+  height: 1px;
+  background-color: #888;
+}
+
+.tickmark {
+  position: absolute;
+  top: 128px;
+  height: 8px;
+  width: 8px;
+  background-color: #888;
+  border-radius: 50%;
+}
+
+.tickmark-label {
+  position: absolute;
+  top: 124px;
+  font-size: 12px;
+  width: 50px;
+  text-align: center;
+  color: #888;
 }

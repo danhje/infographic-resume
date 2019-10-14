@@ -1,7 +1,16 @@
 <p class="component-title">Education and Work Experience</p>
 
 <div id="x-axis"></div>
-<div class='tickmark'></div>
+<div
+  class='tickmark'
+  *ngFor="let tickmark of tickmarks"
+  [style.left.px]="xPositionFromDate(tickmark)-4"
+  ></div>
+<p
+  class="tickmark-label"
+  *ngFor="let tickmark of tickmarks"
+  [style.left.px]="xPositionFromDate(tickmark)-25"
+  >{{tickmark}}</p>
 
 <div
   class="timeline-entry"
@@ -9,7 +18,8 @@
   [style.width.px]="entryWidth(entry)"
   [style.left.px]="xPositionFromDate(entry.startNumber)"
   [style.top.px]="yPosition(entry)"
+  [style.backgroundColor]="entryColor(entry)"
   [attr.popoverTitle]="entry.title"
   [attr.popoverDescription]="entry.description"
-  (click)="onClick($event)"
-></div>
+  (click)="onClick($event)">
+</div>
