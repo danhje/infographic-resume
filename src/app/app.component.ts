@@ -32,7 +32,6 @@ export class AppComponent {
   }
 
   firstParentWithPopoverInfo(elem: HTMLElement) {
-    console.log('Chedking element ' + elem);
     if (elem.getAttribute('popoverTitle') && elem.getAttribute('popoverDescription')) {
       return elem;
     }
@@ -48,9 +47,10 @@ export class AppComponent {
       const viewContainerRef = this.entry;
       const popoverRef = viewContainerRef.createComponent(componentFactory);
       const height = parseInt(window.getComputedStyle(elem).height, 10);
-      const offset = height ? Math.min(20, height) : 20; // Offset is due to margins, scaling transitions etc.
+      const offset = (height ? Math.min(20, height) : 20) - 2; // Offset is due to margins, scaling transitions etc.
+                                                               // The -2 is due to things like tranparent boders.
       (popoverRef.instance as PopoverComponent).popoverColor = window.getComputedStyle(elem).backgroundColor;
-      (popoverRef.instance as PopoverComponent).popoverLeft = this.getOffsetLeft(elem) + elem.offsetWidth / 2;
+      (popoverRef.instance as PopoverComponent).popoverLeft = this.getOffsetLeft(elem) + elem.offsetWidth / 2 - 1;
       (popoverRef.instance as PopoverComponent).popoverTop = this.getOffsetTop(elem) - 600 + offset;
       (popoverRef.instance as PopoverComponent).selfComponentRef = popoverRef;
       (popoverRef.instance as PopoverComponent).popoverTitle = elem.getAttribute('popoverTitle');

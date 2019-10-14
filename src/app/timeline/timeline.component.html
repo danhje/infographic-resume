@@ -1,1 +1,15 @@
 <p class="component-title">Education and Work Experience</p>
+
+<div id="x-axis"></div>
+<div class='tickmark'></div>
+
+<div
+  class="timeline-entry"
+  *ngFor="let entry of timelineEntries"
+  [style.width.px]="entryWidth(entry)"
+  [style.left.px]="xPositionFromDate(entry.startNumber)"
+  [style.top.px]="yPosition(entry)"
+  [attr.popoverTitle]="entry.title"
+  [attr.popoverDescription]="entry.description"
+  (click)="onClick($event)"
+></div>
