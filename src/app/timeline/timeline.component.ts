@@ -196,7 +196,7 @@ export class TimelineComponent implements OnInit {
       ),
       new TimelineEntry(
         'work',
-        true,
+        false,
         'IT Consultant at Sykehuspartner, avd. IKT',
         'Summer internship.',
         '2010.07',
@@ -204,7 +204,7 @@ export class TimelineComponent implements OnInit {
       ),
       new TimelineEntry(
         'work',
-        true,
+        false,
         'Service Technician at Coop Norge Handel AS',
         'Summer internship.',
         '2011.06',
@@ -212,7 +212,7 @@ export class TimelineComponent implements OnInit {
       ),
       new TimelineEntry(
         'work',
-        true,
+        false,
         'Assistant Teacher at the NMBU',
         'Course: INF120 – Programming and data processing.',
         '2012.02',
@@ -220,7 +220,7 @@ export class TimelineComponent implements OnInit {
       ),
       new TimelineEntry(
         'work',
-        true,
+        false,
         'Service Technician at Coop Norge Handel AS',
         'Summer internship.',
         '2012.06',
@@ -228,7 +228,7 @@ export class TimelineComponent implements OnInit {
       ),
       new TimelineEntry(
         'work',
-        true,
+        false,
         'Researcher at the NMBU',
         'A short-term contract job to continue some of the work I had started with my master\'s thesis. \
         I used a test suite I had developed in Python to test some of the most popular neural network simulators.',

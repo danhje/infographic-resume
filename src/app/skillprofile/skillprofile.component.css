@@ -34,7 +34,3 @@ span {
 .skill-level:hover {
   transform: scale(1.0, 1.2);
 }
-
-.skill-level-hovered {
-  transform: scale(1.0, 1.2);
-}

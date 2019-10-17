@@ -19,18 +19,12 @@ export class SkillprofileComponent {
     { skillname: 'iOS developement', level: 130 },
     { skillname: 'Visual design', level: 120 },
     { skillname: 'Energy engineering', level: 110 },
-    { skillname: 'Physics', level: 90 },
     { skillname: 'Writing', level: 85 },
     { skillname: 'Cooking', level: 5 }
   ];
   @Output() elementClicked = new EventEmitter<MouseEvent>();
-  hoveredItemIndex = -1;
 
   constructor(private sanitizer: DomSanitizer) {}
-
-  onSkillNameClick(elementToClick: HTMLElement) {
-    elementToClick.click();
-  }
 
   colorForSkill(skill: { skillname: string, level: number }) {
     if (skill.level < 40) {

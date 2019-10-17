@@ -3,18 +3,13 @@
 <div class="skill-element" *ngFor="let skill of skills;let i = index;">
   <div class="skill-name-wrapper">
     <div
-      class="skill-name"
-      (mouseenter)="hoveredItemIndex = i"
-      (mouseleave)="hoveredItemIndex = -1"
-      (click)="onSkillNameClick(skillLevel)"><span>{{skill.skillname}}</span></div>
+      class="skill-name"><span>{{skill.skillname}}</span></div>
   </div>
   <div
     class="skill-level"
     (click)="onClick($event)"
     [style.height.px]="skill.level"
     [style.backgroundColor]="colorForSkill(skill)"
-    [ngClass]="{'skill-level-hovered': i === hoveredItemIndex}"
     [attr.popoverTitle]="skill.skillname"
-    [attr.popoverDescription]="skill.skillname"
-    #skillLevel></div>
+    [attr.popoverDescription]="skill.skillname"></div>
 </div>
