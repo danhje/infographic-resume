@@ -4,9 +4,9 @@
 
 <template #popover></template>
 
-<div id="gridcontainer">
-  <app-timeline (elementClicked)="childElementClicked($event)"></app-timeline>
-  <app-skillprofile (elementClicked)="childElementClicked($event)"></app-skillprofile>
+<div id="gridcontainer" #gridcontainer>
+  <app-timeline class="component" (elementClicked)="childElementClicked($event)"></app-timeline>
+  <app-skillprofile class="component" (elementClicked)="childElementClicked($event)"></app-skillprofile>
   <app-hobbies class="component" (elementClicked)="childElementClicked($event)"></app-hobbies>
   <app-personality class="component" (elementClicked)="childElementClicked($event)"></app-personality>
 </div>

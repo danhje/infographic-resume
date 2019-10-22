@@ -10,7 +10,8 @@ import { TimelineEntry } from './timelineentry.model';
 })
 export class TimelineComponent implements OnInit {
   minEntryWidth = 10;
-  timelineWidth = 880;
+  timelineLeftBound = 30;
+  timelineRightBound = 930;
   firstTimelineDate: number;
   lastTimelineDate: number;
   tickmarks: number[];
@@ -324,7 +325,8 @@ export class TimelineComponent implements OnInit {
   }
 
   xPositionFromDate(date: number) {
-    return ((date - this.firstTimelineDate) / (this.lastTimelineDate - this.firstTimelineDate)) * this.timelineWidth;
+    return this.timelineLeftBound + ((date - this.firstTimelineDate) /
+                                    (this.lastTimelineDate - this.firstTimelineDate)) * (this.timelineRightBound - this.timelineLeftBound);
   }
 
   yPosition(entry: TimelineEntry) {

@@ -11,7 +11,8 @@ import { PopoverComponent } from './popover/popover.component';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  @ViewChild('popover', {read: ViewContainerRef, static: true}) entry: ViewContainerRef;
+  @ViewChild('popover', {read: ViewContainerRef, static: false}) entry: ViewContainerRef;
+  @ViewChild('gridcontainer', {read: ViewContainerRef, static: true}) gridContainer: ViewContainerRef;
 
   constructor(private componentFactoryResolver: ComponentFactoryResolver, private renderer: Renderer2) { }
 
@@ -47,10 +48,18 @@ export class AppComponent {
       const viewContainerRef = this.entry;
       const popoverRef = viewContainerRef.createComponent(componentFactory);
       const height = parseInt(window.getComputedStyle(elem).height, 10);
-      const offset = (height ? Math.min(20, height) : 20) - 2; // Offset is due to margins, scaling transitions etc.
-                                                               // The -2 is due to things like tranparent boders.
+      const offset = (height ? Math.min(20, height) : 20) - 2;
+      // Offset is due to margins, scaling transitions etc.
+      // The -2 is due to things like tranparent boders.
       (popoverRef.instance as PopoverComponent).popoverColor = window.getComputedStyle(elem).backgroundColor;
-      (popoverRef.instance as PopoverComponent).popoverLeft = this.getOffsetLeft(elem) + elem.offsetWidth / 2 - 1;
+      const gridContainerRightBound = (this.gridContainer.element.nativeElement as HTMLElement).getBoundingClientRect().right;
+      if (this.getOffsetLeft(elem) + elem.offsetWidth / 2 - 1 + 300 < gridContainerRightBound) {
+        (popoverRef.instance as PopoverComponent).flagDirection = 'right';
+        (popoverRef.instance as PopoverComponent).popoverLeft = this.getOffsetLeft(elem) + elem.offsetWidth / 2 - 1;
+      } else {
+        (popoverRef.instance as PopoverComponent).flagDirection = 'left';
+        (popoverRef.instance as PopoverComponent).popoverLeft = this.getOffsetLeft(elem) + elem.offsetWidth / 2 - 300;
+      }
       (popoverRef.instance as PopoverComponent).popoverTop = this.getOffsetTop(elem) - 600 + offset;
       (popoverRef.instance as PopoverComponent).selfComponentRef = popoverRef;
       (popoverRef.instance as PopoverComponent).popoverTitle = elem.getAttribute('popoverTitle');

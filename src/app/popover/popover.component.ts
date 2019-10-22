@@ -6,12 +6,14 @@ import { Component, ElementRef, HostListener, HostBinding, OnInit } from '@angul
   styleUrls: ['./popover.component.css']
 })
 export class PopoverComponent implements OnInit {
+  flagDirection = 'right';
   popoverColor = '';
   popoverTitle = '';
   popoverDescription = '';
-  visible = true;
+  animation = 'none'; // open, close or none
   shouldIgnoreClickout = true;
-  startupTimer: any;
+  animationTimer: any;
+  preventClickoutTimer: any;
   destroyTimer: any;
   selfComponentRef: any;
   @HostBinding('style.left.px') popoverLeft = 0;
@@ -20,23 +22,28 @@ export class PopoverComponent implements OnInit {
   constructor(private eRef: ElementRef) {
   }
 
-  startTimer() {
+  startTimers() {
+    this.animationTimer = setInterval(() => {
+      this.animation = 'open';
+      clearInterval(this.animationTimer);
+    }, 30);
+
     // Ignore clickout that happen immediately after init.
-    this.startupTimer = setInterval(() => {
+    this.preventClickoutTimer = setInterval(() => {
       this.shouldIgnoreClickout = false;
-      clearInterval(this.startupTimer);
+      clearInterval(this.preventClickoutTimer);
     }, 100);
   }
 
   ngOnInit() {
-    this.startTimer();
+    this.startTimers();
   }
 
   @HostListener('document:click', ['$event'])
   clickout(event) {
     if (!this.eRef.nativeElement.contains(event.target)) {
       if (!this.shouldIgnoreClickout) {
-        this.visible = false;
+        this.animation = 'close';
         this.destroyAfterDelay();
       }
     }
@@ -49,5 +56,4 @@ export class PopoverComponent implements OnInit {
       clearInterval(this.destroyTimer);
     }, 1100);
   }
-
 }

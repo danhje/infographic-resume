@@ -1,13 +1,17 @@
 <div id="popoverWrapper">
   <div
     class="line"
-    [ngClass]="{visibleline: visible, hiddenline: !visible}"
+    [ngClass]="{visibleline: (animation === 'open'), hiddenline: (animation === 'close'), left: (flagDirection === 'left'), right: (flagDirection === 'right')}"
     [style.background-color]="popoverColor"></div>
   <div
     class="infobox"
-    [ngClass]="{visibleinfobox: visible, hiddeninfobox: !visible}">
-    <h1><span [style.background-color]="popoverColor">{{popoverTitle}}</span></h1>
-    <p><span>{{popoverDescription}}</span></p>
+    [ngClass]="{revealinfobox: (animation === 'open'), hiddeninfobox: (animation === 'none'), hideinfobox: (animation === 'close'), left: (flagDirection === 'left'), right: (flagDirection === 'right')}">
+    <h1 [ngClass]="{left: (flagDirection === 'left'), right: (flagDirection === 'right')}">
+      <span [style.background-color]="popoverColor">{{popoverTitle}}</span>
+    </h1>
+    <p [ngClass]="{left: (flagDirection === 'left'), right: (flagDirection === 'right')}">
+      <span>{{popoverDescription}}</span>
+    </p>
     <div id="separator"></div>
   </div>
 </div>

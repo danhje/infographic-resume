@@ -17,38 +17,58 @@
 .line {
   position: absolute;
   bottom: 0px;
-  margin-left: 0px;
   width: 1px;
   height: 0px;
+  margin: 0px;
   transition: height 0.5s ease-out 0s;
+}
+
+.line.right {
+  left: 0px;
+}
+
+.line.left {
+  right: 0px;
 }
 
 .visibleline {
-  height: 100%;
   transition: height 0.5s ease-out 0s;
+  height: 100%;
 }
 
 .hiddenline {
-  height: 0%;
   transition: height 0.5s ease-out 0.5s;
+  height: 0%;
 }
 
 .infobox {
-  margin-top: 0px;
-  margin-left: 1px;
+  margin-top: 0 1px 0 1px;
   width: 300px;
-  clip-path: inset(0% 100% 0% 0%);
-  transition: clip-path 0.5s linear 0.5s;
 }
 
-.visibleinfobox {
-  clip-path: inset(0% 0% 0% 0%);
-  transition: clip-path 0.5s linear 0.5s;
-}
-
-.hiddeninfobox {
-  clip-path: inset(0% 100% 0% 0%);
+.hiddeninfobox.left {
   transition: clip-path 0.5s linear 0s;
+  clip-path: inset(0% 0% 0% 100%);
+}
+
+.hiddeninfobox.right {
+  transition: clip-path 0.5s linear 0s;
+  clip-path: inset(0% 100% 0% 0%);
+}
+
+.revealinfobox {
+  transition: clip-path 0.5s linear 0.5s;
+  clip-path: inset(0% 0% 0% 0%);
+}
+
+.hideinfobox.left {
+  transition: clip-path 0.5s linear 0s;
+  clip-path: inset(0% 0% 0% 100%);
+}
+
+.hideinfobox.right {
+  transition: clip-path 0.5s linear 0s;
+  clip-path: inset(0% 100% 0% 0%);
 }
 
 #separator {
@@ -57,23 +77,32 @@
 }
 
 h1 {
-  display:inline;
-  margin: 0px;
+  display: block;
+  margin: 0 0 3px 0;
   font-size: 16px;
   color: var(--background-color);
 }
 
+h1.left {
+  text-align: right;
+}
+
 h1 > span {
-  padding: 0px 2px 2px 0px;
+  padding: 0px 2px 2px 0;
   pointer-events: auto;
 }
 
 p {
-  margin: 3px 0px 0px 0px;
+  display: block;
+  margin: 3px 2px 0px 2px;
   color: var(--foreground-color);
   font-size: 13px;
   font-weight: 400;
   pointer-events: auto;
+}
+
+p.left {
+  text-align: right;
 }
 
 p > span {
