@@ -17,28 +17,18 @@
   box-shadow: 0px 0px 6px var(--background-color);
 }
 
-#x-axis {
-  position: absolute;
-  left: 0;
-  top: 131px;
-  width: 880px;
-  height: 1px;
-  background-color: #888;
-}
-
 .tickmark {
   position: absolute;
-  top: 128px;
-  height: 8px;
-  width: 8px;
+  top: 130px;
+  height: 15px;
+  width: 1px;
   background-color: #888;
-  border-radius: 50%;
 }
 
 .tickmark-label {
   position: absolute;
-  top: 124px;
-  font-size: 12px;
+  top: 121px;
+  font-size: 11px;
   width: 50px;
   text-align: center;
   color: #888;

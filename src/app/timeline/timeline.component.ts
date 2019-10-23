@@ -304,11 +304,11 @@ export class TimelineComponent implements OnInit {
   }
 
   createTickmarks() {
-    const r: Array<number> = [];
-    for (let i = Math.floor(this.firstTimelineDate); i < Math.ceil(this.lastTimelineDate); i++) {
-      r.push(i);
+    const tickmarks: Array<number> = [];
+    for (let i = Math.ceil(this.firstTimelineDate); i <= Math.ceil(this.lastTimelineDate); i++) {
+      tickmarks.push(i);
     }
-    this.tickmarks = r;
+    this.tickmarks = tickmarks;
   }
 
   entryWidth(entry: TimelineEntry) {

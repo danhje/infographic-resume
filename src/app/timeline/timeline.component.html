@@ -1,17 +1,14 @@
 <p class="component-title">Education and Work Experience</p>
 
-<div id="x-axis"></div>
 <div
   class='tickmark'
   *ngFor="let tickmark of tickmarks"
-  [style.left.px]="xPositionFromDate(tickmark)-4"
-  ></div>
+  [style.left.px]="xPositionFromDate(tickmark)"></div>
 <p
   class="tickmark-label"
-  *ngFor="let tickmark of tickmarks"
-  [style.left.px]="xPositionFromDate(tickmark)-25"
-  >{{tickmark}}</p>
-
+  *ngFor="let tickmark of tickmarks.slice(0, -1)"
+  [style.left.px]="xPositionFromDate(tickmark)"
+  [style.width.px]="xPositionFromDate(tickmarks[1])-xPositionFromDate(tickmarks[0])">{{tickmark}}</p>
 <div
   class="timeline-entry"
   *ngFor="let entry of timelineEntries"
