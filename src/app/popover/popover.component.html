@@ -10,7 +10,7 @@
       <span [style.background-color]="popoverColor">{{popoverTitle}}</span>
     </h1>
     <p [ngClass]="{left: (flagDirection === 'left'), right: (flagDirection === 'right')}">
-      <span>{{popoverDescription}}</span>
+      <span [innerHTML]="popoverDescription"></span>
     </p>
     <div id="separator"></div>
   </div>
