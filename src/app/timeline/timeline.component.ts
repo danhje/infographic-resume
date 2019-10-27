@@ -31,7 +31,8 @@ export class TimelineComponent implements OnInit {
         'education',
         true,
         'High school',
-        'Elective course: IT.',
+        'August 2002 - June 2005',
+        'General studies at the Rudolf Steinerskole in Moss. Elective course: IT.',
         '2002.08',
         '2005.06'
       ),
@@ -39,6 +40,7 @@ export class TimelineComponent implements OnInit {
         'education',
         false,
         'Mathematics (2MX)',
+        'February 2006 - April 2006',
         'Admission requirement for engineering programmes. Taken online at Sonans Nettgymnas.',
         '2006.02',
         '2006.04'
@@ -47,6 +49,7 @@ export class TimelineComponent implements OnInit {
         'education',
         false,
         'Mathematics (3MX)',
+        'August 2006 - December 2006',
         'Admission requirement for engineering programmes. Taken online at NKI Fjernundervisning.',
         '2006.08',
         '2006.12'
@@ -55,6 +58,7 @@ export class TimelineComponent implements OnInit {
         'education',
         false,
         'Physics (2FY)',
+        'January 2008 - May 2008',
         'Admission requirement for engineering programmes. Taken online at NKI Fjernundervisning.',
         '2008.01',
         '2008.05'
@@ -63,7 +67,8 @@ export class TimelineComponent implements OnInit {
         'education',
         true,
         'Master of Technology (Civil Engineering) at the Norwegian University of Life Sciences (NMBU)',
-        'Environmental physics and renewable energy.',
+        'August 2008 - June 2013',
+        'Course track: Environmental Physics and Renewable Energy<br />Thesis: Statistical tests for connection algorithms for structured neural networks<br /> <br />This study gave me a good combination of skills in natural science and technology. I got a solid foundation in math, physics and informatics, and a diverse toolbox of skills for problem solving. I choose several courses in programming and data processing, and my thesis included / involved writing a Python test suite for neural network simulators.',
         '2008.08',
         '2013.06'
       ),
@@ -71,7 +76,8 @@ export class TimelineComponent implements OnInit {
         'education',
         false,
         'Principles of Project Management',
-        'Online course at Open2study.com.',
+        'November 2013',
+        'Online course at Open2study.com. The course covered some of the most popular project management methodologies, the project lifecycle and the different phases (Concept, Develop, Execute and Finish), continuous improvement and quality assurance.',
         '2013.11',
         '2013.11'
       ),
@@ -79,7 +85,8 @@ export class TimelineComponent implements OnInit {
         'education',
         false,
         'Solar Energy',
-        'A practical, 2 day course on solar energy.',
+        'September 2016',
+        'A practical, 2 day course on solar energy, arranged by Norsk Solenergiforening, with Bjørn Thorud from Multiconsult as instructor. It taught me about the development in price and technology the last few years, design criteria for a solar energy system, sizing the system, and the necessary components. I got experience with using the simulator PVsyst and the climate database PVGIS.',
         '2016.09',
         '2016.09'
       ),
@@ -87,6 +94,7 @@ export class TimelineComponent implements OnInit {
         'education',
         false,
         'Machine Learning for Beginners',
+        'June 2017',
         'Online course at Udemy.com.',
         '2017.06',
         '2017.06'
@@ -95,6 +103,7 @@ export class TimelineComponent implements OnInit {
         'education',
         false,
         'Autodesk AutoCAD 2017',
+        'July 2017',
         'Online course at Udemy.com.',
         '2017.07',
         '2017.07'
@@ -103,6 +112,7 @@ export class TimelineComponent implements OnInit {
         'education',
         false,
         'PLC Programming From Scratch (PLC 1)',
+        'November 2017 - December 2017',
         'Online course at Udemy.com.',
         '2017.11',
         '2017.12'
@@ -111,6 +121,7 @@ export class TimelineComponent implements OnInit {
         'education',
         false,
         'Introduction to Life-cycle Assessment (LCA)',
+        'May 2018',
         'Course organized by Tekna.',
         '2018.05',
         '2018.05'
@@ -119,6 +130,7 @@ export class TimelineComponent implements OnInit {
         'education',
         false,
         'System Center 2012 Operations Manager: Management Pack Authoring',
+        'November 2018',
         'A 5 day Microsoft Premier Workshop.',
         '2018.11',
         '2018.11'
@@ -127,6 +139,7 @@ export class TimelineComponent implements OnInit {
         'education',
         false,
         'Docker Mastery',
+        'December 2018',
         'Online course at Udemy.com.',
         '2018.12',
         '2018.12'
@@ -135,6 +148,7 @@ export class TimelineComponent implements OnInit {
         'education',
         false,
         'LUP KRAFT - Leadership Development Program',
+        'March 2019 - November 2019',
         'Inhouse program at Sykehuspartner, intended for existing and potential leaders.',
         '2019.03',
         '2019.11'
@@ -143,6 +157,7 @@ export class TimelineComponent implements OnInit {
         'education',
         false,
         'Windows PowerShell: For the IT Professional',
+        'April 2019',
         'A 4 day Microsoft Premier Workshop.',
         '2019.04',
         '2019.04'
@@ -151,14 +166,16 @@ export class TimelineComponent implements OnInit {
         'education',
         false,
         'REST API Design, Development & Management',
+        'November 2019',
         'Online course at Udemy.com.',
-        '2019.08',
+        '2019.11',
         '2019.11'
       ),
       new TimelineEntry(
         'education',
         false,
         'Angular 8 - The Complete Guide',
+        'August 2019 - November 2019',
         'Online course at Udemy.com.',
         '2019.08',
         '2019.11'
@@ -167,14 +184,16 @@ export class TimelineComponent implements OnInit {
         'education',
         false,
         'Angular & NodeJS - The MEAN Stack Guide',
+        'December 2019',
         'Online course at Udemy.com.',
-        '2019.09',
-        '2019.10'
+        '2019.12',
+        '2019.12'
       ),
       new TimelineEntry(
         'work',
         true,
         'IT Service Technician at R/M/S Scandinavia AS',
+        'November 2003 - September 2005',
         'Work.',
         '2003.11',
         '2005.09'
@@ -183,6 +202,7 @@ export class TimelineComponent implements OnInit {
         'work',
         true,
         'Civilian Service at Aker Universitetssykehus HF',
+        'September 2005 - September 2006',
         'Work.',
         '2005.09',
         '2006.09'
@@ -191,6 +211,7 @@ export class TimelineComponent implements OnInit {
         'work',
         true,
         'IT Consultant at Aker Universitetssykehus HF',
+        'September 2006 - July 2008',
         'Work.',
         '2006.09',
         '2008.07'
@@ -199,6 +220,7 @@ export class TimelineComponent implements OnInit {
         'work',
         false,
         'IT Consultant at Sykehuspartner, avd. IKT',
+        'July 2010 - August 2010',
         'Summer internship.',
         '2010.07',
         '2010.08'
@@ -207,6 +229,7 @@ export class TimelineComponent implements OnInit {
         'work',
         false,
         'Service Technician at Coop Norge Handel AS',
+        'June 2011 - August 2011',
         'Summer internship.',
         '2011.06',
         '2011.08'
@@ -215,6 +238,7 @@ export class TimelineComponent implements OnInit {
         'work',
         false,
         'Assistant Teacher at the NMBU',
+        'February 2012 - June 2012',
         'Course: INF120 – Programming and data processing.',
         '2012.02',
         '2012.06'
@@ -223,6 +247,7 @@ export class TimelineComponent implements OnInit {
         'work',
         false,
         'Service Technician at Coop Norge Handel AS',
+        'June 2012 - August 2012',
         'Summer internship.',
         '2012.06',
         '2012.08'
@@ -231,6 +256,7 @@ export class TimelineComponent implements OnInit {
         'work',
         false,
         'Researcher at the NMBU',
+        'June 2013 - Juny 2013',
         'A short-term contract job to continue some of the work I had started with my master\'s thesis. \
         I used a test suite I had developed in Python to test some of the most popular neural network simulators.',
         '2013.06',
@@ -240,7 +266,8 @@ export class TimelineComponent implements OnInit {
         'work',
         true,
         'Special Consultant at Sykehuspartner HF',
-        '2014 - 2018: Operationally responsible at the Operations Bridge. After 2018: Developer and team leader.',
+        'January 2014 - November 2019',
+        '2014 - 2018: Operationally responsible at the Operations Bridge. <br /><br />After 2018: Developer and team leader.',
         '2014.01',
         '2019.11'
       ),
@@ -248,6 +275,7 @@ export class TimelineComponent implements OnInit {
         'work',
         false,
         'Private Teacher for two 13 year old girls',
+        'October 2016 - June 2018',
         'Work.',
         '2016.10',
         '2018.06'
@@ -256,6 +284,7 @@ export class TimelineComponent implements OnInit {
         'work',
         false,
         'Frivillig kommunikasjonsmedarbeider i MDG',
+        'July 2017 - October 2017',
         'Work.',
         '2017.07',
         '2017.10'
@@ -279,7 +308,6 @@ export class TimelineComponent implements OnInit {
     data.forEach(entry => {
       while (this.overlapsSomething(entry)) {
         entry.yIndex++;
-        console.log('increased yIndex ', entry.yIndex);
       }
       this.timelineEntries.push(entry);
     });

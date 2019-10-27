@@ -24,3 +24,17 @@ h1 {
   margin: 0px;
   font-size: 18px;
 }
+
+/* .popover-subtitle class is used in popoverComponent. Must be styled here becaus of the use of innerHTML and emulated encapsulation */
+.popover-subtitle {
+  margin: 0;
+}
+
+/* .popover-description is used in popoverComponent. Must be styled here becaus of the use of innerHTML and emulated encapsulation */
+.popover-description {
+  margin: 0;
+}
+
+.popover-description span {
+  background-color: rgba(50, 54, 57, 0.8); /* #323639 + alpha */
+}

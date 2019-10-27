@@ -63,6 +63,7 @@ export class AppComponent {
       (popoverRef.instance as PopoverComponent).popoverTop = this.getOffsetTop(elem) - 600 + offset;
       (popoverRef.instance as PopoverComponent).selfComponentRef = popoverRef;
       (popoverRef.instance as PopoverComponent).popoverTitle = elem.getAttribute('popoverTitle');
+      (popoverRef.instance as PopoverComponent).popoverSubtitle = elem.getAttribute('popoverSubtitle');
       (popoverRef.instance as PopoverComponent).popoverDescription = elem.getAttribute('popoverDescription');
     } else {
       console.log('The element that was clicked is missing either popoverTitle or popoverDescription, or both.');

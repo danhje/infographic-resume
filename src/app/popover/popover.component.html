@@ -9,7 +9,15 @@
     <h1 [ngClass]="{left: (flagDirection === 'left'), right: (flagDirection === 'right')}">
       <span [style.background-color]="popoverColor">{{popoverTitle}}</span>
     </h1>
-    <p [ngClass]="{left: (flagDirection === 'left'), right: (flagDirection === 'right')}">
+    <p
+      class="subtitle"
+      *ngIf="popoverSubtitle"
+      [ngClass]="{left: (flagDirection === 'left'), right: (flagDirection === 'right')}">
+      <span>{{popoverSubtitle}}</span>
+    </p>
+    <p
+      class="description"
+      [ngClass]="{left: (flagDirection === 'left'), right: (flagDirection === 'right')}">
       <span [innerHTML]="popoverDescription"></span>
     </p>
     <div id="separator"></div>
