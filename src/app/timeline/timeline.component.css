@@ -12,6 +12,7 @@
 }
 
 .timeline-entry:hover {
+  cursor: pointer;
   z-index: 2;
   transform: scale(1.5, 1.5);
   box-shadow: 0px 0px 6px var(--background-color);

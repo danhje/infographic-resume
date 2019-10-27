@@ -32,5 +32,6 @@ span {
 }
 
 .skill-level:hover {
+  cursor: pointer;
   transform: scale(1.0, 1.2);
 }

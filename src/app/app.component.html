@@ -5,6 +5,7 @@
 <template #popover></template>
 
 <div id="gridcontainer" #gridcontainer>
+  <app-summary></app-summary>
   <app-timeline class="component" (elementClicked)="childElementClicked($event)"></app-timeline>
   <app-skillprofile class="component" (elementClicked)="childElementClicked($event)"></app-skillprofile>
   <app-hobbies class="component" (elementClicked)="childElementClicked($event)"></app-hobbies>

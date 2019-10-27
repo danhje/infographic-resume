@@ -35,6 +35,10 @@ span {
   transition: width 0.1s ease-out 0s;
 }
 
+.label:hover, .level:hover {
+  cursor: pointer;
+}
+
 .openness {
   background-color: var(--highlight-color-1);
 }
