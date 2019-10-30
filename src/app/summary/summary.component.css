@@ -1,3 +1,17 @@
-p {
+:host {
+  display: grid;
+  grid-template-rows: auto max-content auto;
+  grid-template-columns: 1fr;
+}
+
+#container {
+  padding: 35px 0 35px 0;
+  /* border-top: 1px dashed var(--foreground-color); */
+  border-bottom: 1px dashed var(--foreground-color);
+}
+
+.summary {
   color: var(--foreground-color);
+  font-size: 14px;
+  font-weight: 200;
 }

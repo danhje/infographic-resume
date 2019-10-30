@@ -8,7 +8,8 @@
 #gridcontainer {
   display: grid;
   grid-template-columns: 300px 300px 300px;
-  grid-template-rows: 300px 300px;
+  /* grid-template-rows: 300px; */
+  grid-auto-rows: 300px;
   grid-gap: 30px;
   width: 960px;
   margin: 0px auto 0px auto;
@@ -22,6 +23,6 @@ app-timeline {
   grid-column: 1 / span 3;
 }
 
-#spacer {
+#spacer-bottom {
   height: 100px;
 }

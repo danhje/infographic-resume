@@ -68,7 +68,7 @@ export class TimelineComponent implements OnInit {
         true,
         'Master of Technology (Civil Engineering) at the Norwegian University of Life Sciences (NMBU)',
         'August 2008 - June 2013',
-        'Course track: Environmental Physics and Renewable Energy<br />Thesis: Statistical tests for connection algorithms for structured neural networks<br /> <br />This study gave me a good combination of skills in natural science and technology. I got a solid foundation in math, physics and informatics, and a diverse toolbox of skills for problem solving. I choose several courses in programming and data processing, and my thesis included / involved writing a Python test suite for neural network simulators.',
+        'Course track: Environmental Physics and Renewable Energy<br />Thesis: Statistical tests for connection algorithms for structured neural networks<br /> <br />This study gave me a good combination of skills in natural science and technology. I got a solid foundation in math, physics and informatics, and a diverse toolbox of skills for problem solving. I choose several courses in programming and data processing, and my thesis involved writing a Python test suite for neural network simulators.',
         '2008.08',
         '2013.06'
       ),
@@ -95,7 +95,7 @@ export class TimelineComponent implements OnInit {
         false,
         'Machine Learning for Beginners',
         'June 2017',
-        'Online course at Udemy.com.',
+        'Online course at Udemy.com. The course focused on classification with the use of the Python module scikit-learn. Different classifiers were used, for example decision tree, logistic regression, naive bayes and k-nearest neighbors. I also learned about using feature extraction and preprocessing to achieve increased accuracy.',
         '2017.06',
         '2017.06'
       ),
@@ -104,7 +104,7 @@ export class TimelineComponent implements OnInit {
         false,
         'Autodesk AutoCAD 2017',
         'July 2017',
-        'Online course at Udemy.com.',
+        'Online course at Udemy.com. The course covered topics like commands, drafting methods, extracting information from the model, precision tools (OSNAP, ORTHO, grips), the use of layers, annotations, blocks (for reuse), etc.',
         '2017.07',
         '2017.07'
       ),
@@ -113,7 +113,7 @@ export class TimelineComponent implements OnInit {
         false,
         'PLC Programming From Scratch (PLC 1)',
         'November 2017 - December 2017',
-        'Online course at Udemy.com.',
+        'Online course at Udemy.com. A very thorough course which equipped me with all the tools needed to be able to program PLCs. A few of the topics covered in the course: Ladder logic (conditions and outputs, branches, addressing, the most common instructions, best practices), data types, resolution and precision, PID control, PLC and module configuration, HMI, serial and ethernet connections, alarms, notifications, emulation and debugging.',
         '2017.11',
         '2017.12'
       ),
@@ -122,7 +122,7 @@ export class TimelineComponent implements OnInit {
         false,
         'Introduction to Life-cycle Assessment (LCA)',
         'May 2018',
-        'Course organized by Tekna.',
+        'A one-day course, taught by Dr. Johannes Daae, associate professor at OsloMet and eco-designer at Bergfall Miljørådgivere AS. Topics covered in the course: How to read and compare LCAs, how to perform an LCA / EPD, choosing a functional unit, system boundaries, cut-off, inventory (LCI) diagram, impact assessment, different allocation methods for partitioning the environmental load, relevant software and datasets and Product Category Rules (PCR).',
         '2018.05',
         '2018.05'
       ),
@@ -131,7 +131,7 @@ export class TimelineComponent implements OnInit {
         false,
         'System Center 2012 Operations Manager: Management Pack Authoring',
         'November 2018',
-        'A 5 day Microsoft Premier Workshop.',
+        'A 5 day Microsoft Premier Workshop which covered how to design management packs for System Center Operation Manager through XML editing in Visual Studio.',
         '2018.11',
         '2018.11'
       ),
@@ -140,7 +140,7 @@ export class TimelineComponent implements OnInit {
         false,
         'Docker Mastery',
         'December 2018',
-        'Online course at Udemy.com.',
+        'En excellent course at Udemy.com, with lots of exercises. The course covered container and image basics, dockerfiles, image layers, persistent data (volumes and bind mounting), image layers, networks, DNS round robin og docker swarm clusters (services, overlay networks, routing mesh, swarm stacks and swarm secrets).',
         '2018.12',
         '2018.12'
       ),
@@ -149,7 +149,7 @@ export class TimelineComponent implements OnInit {
         false,
         'LUP KRAFT - Leadership Development Program',
         'March 2019 - November 2019',
-        'Inhouse program at Sykehuspartner, intended for existing and potential leaders.',
+        'In-house program at Sykehuspartner, intended for existing and potential leaders. The program consisted of 7 conferences with theory and training, as well ass weekly group meetings. Emphasis was put on practical experimentation and training in ones own daylo work situation in between the conferences. All attendees choose one actual challenge to work on through the 9 month duration of the program. The program was based on established organizational and leadership theory, and was very well planned and implemented. Some key topics covered: Customer and business knowledge, insight into one\'s own leadership style, values and preferences (through Jungian type psychology), change management, ADKAR, managerial prerogative, conflict management, the difficult conversation, communication skills, relational coordination, the coaching leadership style, presentation skills, continuous improvement.',
         '2019.03',
         '2019.11'
       ),
@@ -158,7 +158,7 @@ export class TimelineComponent implements OnInit {
         false,
         'Windows PowerShell: For the IT Professional',
         'April 2019',
-        'A 4 day Microsoft Premier Workshop.',
+        'A 4 day Microsoft Premier Workshop which covered, among other things, script blocks, functions, providers, pipelining, flow control, hashtables and custom objects.',
         '2019.04',
         '2019.04'
       ),
@@ -166,9 +166,9 @@ export class TimelineComponent implements OnInit {
         'education',
         false,
         'REST API Design, Development & Management',
-        'November 2019',
-        'Online course at Udemy.com.',
-        '2019.11',
+        'October 2019 - November 2019',
+        'Online course at Udemy.com. Not yet completed.',
+        '2019.10',
         '2019.11'
       ),
       new TimelineEntry(
@@ -176,7 +176,7 @@ export class TimelineComponent implements OnInit {
         false,
         'Angular 8 - The Complete Guide',
         'August 2019 - November 2019',
-        'Online course at Udemy.com.',
+        'Online course at Udemy.com. Not yet completed.',
         '2019.08',
         '2019.11'
       ),
@@ -185,7 +185,7 @@ export class TimelineComponent implements OnInit {
         false,
         'Angular & NodeJS - The MEAN Stack Guide',
         'December 2019',
-        'Online course at Udemy.com.',
+        'Online course at Udemy.com. Not yet started.',
         '2019.12',
         '2019.12'
       ),
