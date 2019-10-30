@@ -1,3 +1,3 @@
 # InfographicResume
 
-![Screenshot](danhje/infographic-resume/master/docs/screenshot.png?raw=true)
+![Screenshot](https://raw.githubusercontent.com/danhje/infographic-resume/master/docs/screenshot.png)
