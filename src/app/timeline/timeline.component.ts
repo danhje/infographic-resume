@@ -30,7 +30,7 @@ export class TimelineComponent implements OnInit {
       new TimelineEntry(
         'education',
         true,
-        'High school',
+        'High School',
         'August 2002 - June 2005',
         'General studies at the Rudolf Steinerskole in Moss. Elective course: IT.',
         '2002.08',
@@ -194,7 +194,7 @@ export class TimelineComponent implements OnInit {
         true,
         'IT Service Technician at R/M/S Scandinavia AS',
         'November 2003 - September 2005',
-        'Work.',
+        'Maintenance and repair of desktop computers, laptops and printers.',
         '2003.11',
         '2005.09'
       ),
@@ -203,7 +203,7 @@ export class TimelineComponent implements OnInit {
         true,
         'Civilian Service at Aker Universitetssykehus HF',
         'September 2005 - September 2006',
-        'Work.',
+        'IT support (remote and onsite), user management, system administration, server and network operation.',
         '2005.09',
         '2006.09'
       ),
@@ -212,16 +212,16 @@ export class TimelineComponent implements OnInit {
         true,
         'IT Consultant at Aker Universitetssykehus HF',
         'September 2006 - July 2008',
-        'Work.',
+        'I developed a system for digital requisition of new user accounts and automated account creation based on the requisitions. This dramatically reduced the time spent on user management. In addition, i performed IT support (remote and onsite), system administration, and server and network operation.',
         '2006.09',
         '2008.07'
       ),
       new TimelineEntry(
         'work',
         false,
-        'IT Consultant at Sykehuspartner, avd. IKT',
+        'IT Consultant at Sykehuspartner IT Department',
         'July 2010 - August 2010',
-        'Summer internship.',
+        'Summer internship. Mainly onsite IT support, but also some user management, system administration, server and network operation.',
         '2010.07',
         '2010.08'
       ),
@@ -230,7 +230,7 @@ export class TimelineComponent implements OnInit {
         false,
         'Service Technician at Coop Norge Handel AS',
         'June 2011 - August 2011',
-        'Summer internship.',
+        'Summer internship. IT support and user management.',
         '2011.06',
         '2011.08'
       ),
@@ -239,7 +239,7 @@ export class TimelineComponent implements OnInit {
         false,
         'Assistant Teacher at the NMBU',
         'February 2012 - June 2012',
-        'Course: INF120 – Programming and data processing.',
+        'I helped students with programming assignments, and led the practice classes for the course INF120 – Programming and data processing. ',
         '2012.02',
         '2012.06'
       ),
@@ -248,7 +248,7 @@ export class TimelineComponent implements OnInit {
         false,
         'Service Technician at Coop Norge Handel AS',
         'June 2012 - August 2012',
-        'Summer internship.',
+        'Summer internship. IT support and user management.',
         '2012.06',
         '2012.08'
       ),
@@ -267,25 +267,25 @@ export class TimelineComponent implements OnInit {
         true,
         'Special Consultant at Sykehuspartner HF',
         'January 2014 - November 2019',
-        '2014 - 2018: Operationally responsible at the Operations Bridge. <br /><br />After 2018: Developer and team leader.',
+        '2014 - 2018: IT Operations Manager at the Operations Bridge. Responsible for event management, as well as leading the resolution of major incidents by managing the team of technical experts that are mobilized to resolve the issue.<br /><br />2018 - present: Developer and team leader for the team that develops infrastructure monitoring and end user monitoring (EUM) through scripts that emulate users of our IT services.',
         '2014.01',
         '2019.11'
       ),
       new TimelineEntry(
         'work',
         false,
-        'Private Teacher for two 13 year old girls',
+        'Private Teacher for Two 13 Year Old Girls',
         'October 2016 - June 2018',
-        'Work.',
+        'Private math tutoring and homework support.',
         '2016.10',
         '2018.06'
       ),
       new TimelineEntry(
         'work',
         false,
-        'Frivillig kommunikasjonsmedarbeider i MDG',
+        'Communication Assistant for the Norwegian Green Party',
         'July 2017 - October 2017',
-        'Work.',
+        'Volunteer work, answering questions directed at the Green Party on social media before the parliamentary election.',
         '2017.07',
         '2017.10'
       )
@@ -359,9 +359,9 @@ export class TimelineComponent implements OnInit {
 
   yPosition(entry: TimelineEntry) {
     if (entry.type === 'education') {
-      return 100 - entry.yIndex * 18;
+      return 110 - entry.yIndex * 18;
     } else {
-      return 160 + entry.yIndex * 18;
+      return 150 + entry.yIndex * 18;
     }
   }
 
