@@ -3,6 +3,7 @@
   text-align: center;
   color: var(--foreground-color);
   font-weight: 100;
+  text-transform: uppercase;
 }
 
 #gridcontainer {
