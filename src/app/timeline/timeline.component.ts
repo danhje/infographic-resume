@@ -265,7 +265,7 @@ export class TimelineComponent implements OnInit {
       new TimelineEntry(
         'work',
         true,
-        'Special Consultant at Sykehuspartner HF',
+        '<span itemprop="jobTitle">Special Consultant</span> at <span itemprop="worksFor" itemscope itemtype="https://schema.org/Organization"><span itemprop="name">Sykehuspartner HF</span></span>',
         'January 2014 - November 2019',
         '2014 - 2018: IT Operations Manager at the Operations Bridge. Responsible for event management, as well as leading the resolution of major incidents by managing the team of technical experts that are mobilized to resolve the issue.<br /><br />2018 - present: Developer and team leader for the team that develops infrastructure monitoring and end user monitoring (EUM) through scripts that emulate users of our IT services.',
         '2014.01',
