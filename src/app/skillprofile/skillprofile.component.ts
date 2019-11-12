@@ -7,45 +7,32 @@ import { DomSanitizer } from '@angular/platform-browser';
   styleUrls: ['./skillprofile.component.css']
 })
 export class SkillprofileComponent {
-  skills: { skillname: string, description: string, level: number }[] = [
+  skills: { skillname: string, level: number }[] = [
     { skillname: 'Team leadership',
-      description: 'My current position. LUP. IT Operations Manager...',
-      level: 70 },
+      level: 60 },
     { skillname: 'Machine learning',
-      description: ' ',
-      level: 90 },
+      level: 75 },
     { skillname: 'Mathematics',
-      description: ' ',
-      level: 100 },
-    { skillname: 'Electrical engineering',
-      description: ' ',
-      level: 105 },
+      level: 90 },
     { skillname: 'Data analysis',
-      description: ' ',
       level: 115 },
     { skillname: 'Data visualization',
-      description: ' ',
       level: 130 },
+    { skillname: 'iOS developement',
+      level: 135 },
     { skillname: 'Scientiffic programming',
-      description: ' ',
       level: 170 },
     { skillname: 'Web developement',
-      description: ' ',
       level: 140 },
-    { skillname: 'iOS developement',
-      description: ' ',
-      level: 130 },
-    { skillname: 'Visual design',
-      description: ' ',
+    { skillname: 'IT operations and monitoring',
       level: 120 },
-    { skillname: 'Energy engineering',
-      description: ' ',
+    { skillname: 'Visual design',
       level: 110 },
+    { skillname: 'Energy engineering',
+      level: 80 },
     { skillname: 'Writing',
-      description: ' ',
-      level: 85 },
+      level: 75 },
     { skillname: 'Cooking',
-      description: ' ',
       level: 5 }
   ];
   @Output() elementClicked = new EventEmitter<MouseEvent>();
@@ -63,6 +50,20 @@ export class SkillprofileComponent {
       return this.sanitizer.bypassSecurityTrustStyle('var(--highlight-color-2)');
     } else {
       return this.sanitizer.bypassSecurityTrustStyle('var(--highlight-color-1)');
+    }
+  }
+
+  descriptionForSkill(skill: { skillname: string, level: number }) {
+    if (skill.level < 40) {
+      return 'Skill level: Novice';
+    } else if (skill.level < 80) {
+      return 'Skill level: Beginner';
+    } else if (skill.level < 100) {
+      return 'Skill level: Competent';
+    } else if (skill.level < 120) {
+      return 'Skill level: Proficient';
+    } else {
+      return 'Skill level: Expert';
     }
   }
 
