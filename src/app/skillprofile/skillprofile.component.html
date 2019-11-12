@@ -1,15 +1,15 @@
 <p class="component-title">Core Skills</p>
 
-<div class="skill-element" *ngFor="let skill of skills;let i = index;">
-  <div class="skill-name-wrapper">
+<div class="container">
+  <div class="skills-wrapper">
     <div
-      class="skill-name"><span>{{skill.skillname}}</span></div>
+      *ngFor="let skill of skills;let i = index;"
+      class="skill-level"
+      (click)="onClick($event)"
+      [style.height.px]="skill.level"
+      [style.backgroundColor]="colorForSkill(skill)"
+      [attr.popoverTitle]="skill.skillname"
+      [attr.popoverDescription]="descriptionForSkill(skill)">
+    </div>
   </div>
-  <div
-    class="skill-level"
-    (click)="onClick($event)"
-    [style.height.px]="skill.level"
-    [style.backgroundColor]="colorForSkill(skill)"
-    [attr.popoverTitle]="skill.skillname"
-    [attr.popoverDescription]="skill.description"></div>
 </div>

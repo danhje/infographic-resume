@@ -1,32 +1,23 @@
+.container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.skills-wrapper {
+  display: inline-block;
+  width: fit-content;
+}
+
 span {
   pointer-events: none;
 }
 
-.skill-element {
+.skill-level {
   display: inline-block;
   margin: 0px 3px 0px 0px;
-}
-
-.skill-name-wrapper {
-  display: inline-block;
-  top: 0px;
-  height: 80px;
-  width: 18px;
-  vertical-align: bottom;
-}
-
-.skill-name {
-  left: 100;
-  bottom: 0px;
-  width: 200px;
-  transform: translateY(65px) rotate(-35deg);
-  transform-origin: left top;
-  color: var(--highlight-color-1);
-  font-size: 12px;
-}
-
-.skill-level {
-  display: block;
   width: 18px;
   transition: transform 0.1s ease-out;
 }
