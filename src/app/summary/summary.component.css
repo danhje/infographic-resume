@@ -1,13 +1,8 @@
 :host {
   display: grid;
-  grid-template-rows: auto max-content auto;
+  grid-template-rows: 30px max-content 30px;
   grid-template-columns: 1fr;
   overflow: hidden;
-}
-
-#container {
-  padding: 21px 0 25px 0;
-  border-bottom: 1px dashed var(--foreground-color);
 }
 
 .summary {
