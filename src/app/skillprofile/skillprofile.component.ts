@@ -30,7 +30,7 @@ export class SkillprofileComponent {
       level: 110 },
     { skillname: 'Energy engineering',
       level: 80 },
-    { skillname: 'Writing',
+    { skillname: 'Project management',
       level: 75 },
     { skillname: 'Cooking',
       level: 5 }

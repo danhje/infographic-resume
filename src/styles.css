@@ -19,6 +19,10 @@ h1 {
   font-weight: 300;
 }
 
+a {
+  color: var(--highlight-color-1);
+}
+
 .component-title {
   color: var(--foreground-color);
   margin: 0px;
