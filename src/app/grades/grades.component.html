@@ -1,0 +1,13 @@
+<p class="component-title">University Grades</p>
+
+<svg width="300px" height="250px" viewBox="0 0 300 250" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g stroke="none" stroke-width="0" fill="#979797" fill-rule="evenodd">
+    <circle
+      *ngFor="let grade of grades"
+      [attr.cx]="grade.xPosition"
+      [attr.cy]="grade.yPosition"
+      [attr.r]="math.sqrt(grade.points) * 2"
+      [ngClass]="grade.cssClass"></circle>
+    <!-- <line x1="0.5" y1="73.5" x2="122.5" y2="4.5" id="Line" stroke-linecap="square"></line> -->
+  </g>
+</svg>
