@@ -2,7 +2,6 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
 import { TimelineEntry } from './timelineentry.model';
-import { ENETUNREACH } from 'constants';
 
 @Component({
   selector: 'app-timeline',

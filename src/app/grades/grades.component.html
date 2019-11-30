@@ -1,6 +1,6 @@
 <p class="component-title">University Grades</p>
 
-<svg width="300px" height="250px" viewBox="0 0 300 250" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="300px" height="280px" viewBox="0 0 300 280" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <g stroke="none" stroke-width="0" fill="#979797" fill-rule="evenodd">
     <circle
       *ngFor="let grade of grades"
@@ -8,6 +8,9 @@
       [attr.cy]="grade.yPosition"
       [attr.r]="math.sqrt(grade.points) * 2"
       [ngClass]="grade.cssClass"></circle>
-    <!-- <line x1="0.5" y1="73.5" x2="122.5" y2="4.5" id="Line" stroke-linecap="square"></line> -->
+    <!-- <line x1="15" y1="255" x2="15" y2="10" stroke="#888" stroke-width="1" stroke-linecap="square"></line>
+    <line x1="15" y1="255" x2="300" y2="255" stroke="#888" stroke-width="1" stroke-linecap="square"></line>
+    <text id="label-grade" x="0" y="170" transform="rotate(-90 0 157)" >Grade</text>
+    <text id="label-semester" x="130" y="270">Time</text> -->
   </g>
 </svg>
