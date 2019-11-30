@@ -1,0 +1,24 @@
+svg {
+  display: block;
+  margin: 20px 0 0 0;
+}
+
+.highlight-color-1 {
+  fill: var(--highlight-color-1);
+}
+
+.highlight-color-2 {
+  fill: var(--highlight-color-2);
+}
+
+.highlight-color-3 {
+  fill: var(--highlight-color-3);
+}
+
+.highlight-color-4 {
+  fill: var(--highlight-color-4);
+}
+
+.highlight-color-5 {
+  fill: var(--highlight-color-5);
+}

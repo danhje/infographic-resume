@@ -8,6 +8,8 @@ import { PersonalityComponent } from './personality/personality.component';
 import { SkillprofileComponent } from './skillprofile/skillprofile.component';
 import { TimelineComponent } from './timeline/timeline.component';
 import { SummaryComponent } from './summary/summary.component';
+import { GradesComponent } from './grades/grades.component';
+import { TestimonialComponent } from './testimonial/testimonial.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { SummaryComponent } from './summary/summary.component';
     PersonalityComponent,
     SkillprofileComponent,
     TimelineComponent,
-    SummaryComponent
+    SummaryComponent,
+    GradesComponent,
+    TestimonialComponent
   ],
   imports: [
     BrowserModule,
