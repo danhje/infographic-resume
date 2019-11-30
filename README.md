@@ -4,4 +4,4 @@ An interactive, infographic-like resume. I'm creating this while taking an onlin
 
 Live demo available [here](https://danhje.github.io/infographic-resume/).
 
-![Screenshot](https://raw.githubusercontent.com/danhje/infographic-resume/master/docs/screenshot.png)
+![Screenshot](https://github.com/danhje/infographic-resume/blob/master/screenshot.png?raw=true)
