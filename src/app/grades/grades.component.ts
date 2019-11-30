@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { Grade } from './grade.model';
 
 @Component({
@@ -7,10 +7,11 @@ import { Grade } from './grade.model';
   styleUrls: ['./grades.component.css']
 })
 export class GradesComponent implements OnInit {
-  timelineLeftBound = 30;
+  timelineLeftBound = 15;
   timelineRightBound = 280;
   grades: Grade[] = [];
   math = Math; // Needed to make Math available in bindings.
+  @Output() elementClicked = new EventEmitter<MouseEvent>();
 
   ngOnInit() {
     this.populateGradeList();
@@ -282,7 +283,7 @@ export class GradesComponent implements OnInit {
   }
 
   yPositionFromGrade(grade: number) {
-    return grade * 45 - 10;
+    return grade * 45 + 10;
   }
 
   classForCategory(category: string) {
@@ -293,5 +294,9 @@ export class GradesComponent implements OnInit {
       case ('other'): return 'highlight-color-5';
       default: return 'highlight-color-3';
     }
+  }
+
+  onClick(event: MouseEvent) {
+    this.elementClicked.emit(event);
   }
 }
