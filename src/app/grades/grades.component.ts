@@ -7,7 +7,7 @@ import { Grade } from './grade.model';
   styleUrls: ['./grades.component.css']
 })
 export class GradesComponent implements OnInit {
-  timelineLeftBound = 10;
+  timelineLeftBound = 30;
   timelineRightBound = 280;
   grades: Grade[] = [];
   math = Math; // Needed to make Math available in bindings.
@@ -264,8 +264,8 @@ export class GradesComponent implements OnInit {
       entry.yPosition = this.yPositionFromGrade(entry.grade);
 
       while (this.overlapsExistingEntry(entry)) {
-        entry.xPosition += 8;
-        entry.yPosition -= 12;
+        entry.xPosition += 13;
+        entry.yPosition -= 7;
       }
       this.grades.push(entry);
     });
@@ -282,7 +282,7 @@ export class GradesComponent implements OnInit {
   }
 
   yPositionFromGrade(grade: number) {
-    return grade * 50 - 20;
+    return grade * 45 - 10;
   }
 
   classForCategory(category: string) {
