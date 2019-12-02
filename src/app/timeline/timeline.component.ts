@@ -359,9 +359,9 @@ export class TimelineComponent implements OnInit {
 
   yPosition(entry: TimelineEntry) {
     if (entry.type === 'education') {
-      return 110 - entry.yIndex * 18;
+      return 80 - entry.yIndex * 18;
     } else {
-      return 150 + entry.yIndex * 18;
+      return 120 + entry.yIndex * 18;
     }
   }
 

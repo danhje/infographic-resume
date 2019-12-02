@@ -20,7 +20,9 @@
             "tsConfig": "tsconfig.app.json",
             "aot": false,
             "assets": [
-              "src/assets"
+              "src/assets",
+              "src/google0633a3f15d212fe4.html",
+              "src/sitemap.xml"
             ],
             "styles": [
               "src/styles.css"

@@ -1,4 +1,4 @@
-export class Grade {
+export class Course {
   public xPosition: number;
   public yPosition: number;
   public cssClass: string;
