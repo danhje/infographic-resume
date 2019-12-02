@@ -20,7 +20,7 @@
 
 .tickmark {
   position: absolute;
-  top: 130px;
+  top: 100px;
   height: 15px;
   width: 1px;
   background-color: #888;
@@ -28,7 +28,7 @@
 
 .tickmark-label {
   position: absolute;
-  top: 121px;
+  top: 90px;
   font-size: 11px;
   width: 50px;
   text-align: center;
