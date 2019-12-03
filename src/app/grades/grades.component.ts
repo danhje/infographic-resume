@@ -10,6 +10,7 @@ export class GradesComponent implements OnInit {
   timelineLeftBound = 15;
   timelineRightBound = 280;
   courses: Course[] = [];
+  highlightedCategory: string;
   math = Math; // Needed to make Math available in bindings.
   @Output() elementClicked = new EventEmitter<MouseEvent>();
 
@@ -289,11 +290,19 @@ export class GradesComponent implements OnInit {
   classForCategory(category: string) {
     switch (category) {
       case ('informatics'): return 'highlight-color-1';
-      case ('natural science'): return 'highlight-color-2';
-      case ('math'): return 'highlight-color-4';
+      case ('math'): return 'highlight-color-3';
+      case ('natural science'): return 'highlight-color-4';
       case ('other'): return 'highlight-color-5';
       default: return 'highlight-color-3';
     }
+  }
+
+  onMouseenter(category: string) {
+    this.highlightedCategory = category;
+  }
+
+  onMouseleave() {
+    this.highlightedCategory = null;
   }
 
   onClick(event: MouseEvent) {
