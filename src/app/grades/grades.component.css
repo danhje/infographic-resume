@@ -6,7 +6,11 @@
   position: absolute;
   z-index: 1;
   border-radius: 50%;
-  transition: transform 0.1s ease-out, box-shadow 0.1s ease-out, z-index 0.1s ease-out;
+  transition: opacity 0.2s ease-out, transform 0.1s ease-out, box-shadow 0.1s ease-out, z-index 0.1s ease-out;
+}
+
+.hidden {
+  opacity: 0.1;
 }
 
 .course:hover {
@@ -33,5 +37,47 @@
 }
 
 .highlight-color-5 {
+  background-color: var(--highlight-color-5);
+}
+
+.legend-container {
+  position: absolute;
+  bottom: 0;
+}
+
+.legend > span {
+  color: var(--background-color);
+  font-size: 13px;
+  font-weight: normal;
+  pointer-events: none;
+  padding: 0;
+  line-height: 21px;
+}
+
+.legend {
+  display: block;
+  width: max-content;
+  margin: 0;
+  padding: 0 3px 0 2px;
+  border-top: 3px solid var(--background-color);
+}
+
+.legend:hover {
+  cursor: pointer;
+}
+
+.informatics {
+  background-color: var(--highlight-color-1);
+}
+
+.mathematics {
+  background-color: var(--highlight-color-3);
+}
+
+.natural-science {
+  background-color: var(--highlight-color-4);
+}
+
+.other {
   background-color: var(--highlight-color-5);
 }
