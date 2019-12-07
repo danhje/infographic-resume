@@ -166,28 +166,28 @@ export class TimelineComponent implements OnInit {
         'education',
         false,
         'REST API Design, Development & Management',
-        'October 2019 - November 2019',
-        'Online course at Udemy.com. Not yet completed.',
-        '2019.10',
-        '2019.11'
+        'November 2019 - December 2019',
+        'Online course at Udemy.com which covered the six REST architectural constraints, best practices for endpoint naming, the use of subdomains, CRUD and non-CRUD operations, nesting and how to avoid deep nesting, error handling, handling breaking and non-breaking changes, versioning, caching, the benefits of partial response, API security, OAuth for authorization, and much more.',
+        '2019.11',
+        '2019.12'
       ),
       new TimelineEntry(
         'education',
         false,
         'Angular 8 - The Complete Guide',
-        'August 2019 - November 2019',
+        'October 2019 - January 2020',
         'Online course at Udemy.com. Not yet completed.',
-        '2019.08',
-        '2019.11'
+        '2019.10',
+        '2020.01'
       ),
       new TimelineEntry(
         'education',
         false,
         'Angular & NodeJS - The MEAN Stack Guide',
         'December 2019',
-        'Online course at Udemy.com. Not yet started.',
-        '2019.12',
-        '2019.12'
+        'Online course at Udemy.com. Planned, not yet started.',
+        '2020.01',
+        '2020.01'
       ),
       new TimelineEntry(
         'work',
