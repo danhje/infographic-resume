@@ -149,7 +149,7 @@ export class TimelineComponent implements OnInit {
         false,
         'LUP KRAFT - Leadership Development Program',
         'March 2019 - November 2019',
-        'In-house program at Sykehuspartner, intended for existing and potential leaders. The program consisted of 7 conferences with theory and training, as well ass weekly group meetings. Emphasis was put on practical experimentation and training in ones own daylo work situation in between the conferences. All attendees choose one actual challenge to work on through the 9 month duration of the program. The program was based on established organizational and leadership theory, and was very well planned and implemented. Some key topics covered: Customer and business knowledge, insight into one\'s own leadership style, values and preferences (through Jungian type psychology), change management, ADKAR, managerial prerogative, conflict management, the difficult conversation, communication skills, relational coordination, the coaching leadership style, presentation skills, continuous improvement.',
+        'In-house program at Sykehuspartner, intended for existing and potential leaders. The program consisted of 7 conferences with theory and training, as well as weekly group meetings. Emphasis was put on practical experimentation and training in ones own daily work situation in between the conferences. All attendees chose an actual challenge to work on through the 9 month duration of the program. Some key topics covered: Customer and business knowledge, insight into one\'s own leadership style, values and preferences (through Jungian type psychology), change management, ADKAR, managerial prerogative, conflict management, the difficult conversation, communication skills, relational coordination, the coaching leadership style, presentation skills, continuous improvement.',
         '2019.03',
         '2019.11'
       ),
@@ -175,10 +175,10 @@ export class TimelineComponent implements OnInit {
         'education',
         false,
         'Angular 8 - The Complete Guide',
-        'October 2019 - January 2020',
+        'October 2019 - February 2020',
         'Online course at Udemy.com. Not yet completed.',
         '2019.10',
-        '2020.01'
+        '2020.02'
       ),
       new TimelineEntry(
         'education',
