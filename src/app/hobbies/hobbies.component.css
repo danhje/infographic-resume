@@ -4,13 +4,14 @@
 
 .circle {
   position: absolute;
+  display: grid;
+  justify-items: center;
+  align-items: center;
   opacity: 1;
-  transition: clip-path 0.1s ease-out 0s;
 }
 
 .circle:hover {
   cursor: pointer;
-  transition: clip-path 0.1s ease-out 0s;
 }
 
 .circle:nth-of-type(1) {
@@ -19,12 +20,7 @@
   left: 20px;
   width: 170px;
   height: 170px;
-  clip-path: circle(75px at 85px 85px);
   background-color: var(--highlight-color-5);
-}
-
-.circle:nth-of-type(1):hover {
-  clip-path: circle(85px at 85px 85px);
 }
 
 .circle:nth-of-type(2) {
@@ -33,12 +29,7 @@
   left: 140px;
   width: 120px;
   height: 120px;
-  clip-path: circle(50px at 60px 60px);
   background-color: var(--highlight-color-4);
-}
-
-.circle:nth-of-type(2):hover {
-  clip-path: circle(60px at 60px 60px);
 }
 
 .circle:nth-of-type(3) {
@@ -47,12 +38,7 @@
   left: 180px;
   width: 100px;
   height: 100px;
-  clip-path: circle(40px at 50px 50px);
   background-color: var(--highlight-color-3);
-}
-
-.circle:nth-of-type(3):hover {
-  clip-path: circle(50px at 50px 50px);
 }
 
 .circle:nth-of-type(4) {
@@ -61,12 +47,7 @@
   left: 90px;
   width: 160px;
   height: 160px;
-  clip-path: circle(70px at 80px 80px);
   background-color: var(--highlight-color-2);
-}
-
-.circle:nth-of-type(4):hover {
-  clip-path: circle(80px at 80px 80px);
 }
 
 .circle:nth-of-type(5) {
@@ -75,22 +56,114 @@
   left: 10px;
   width: 120px;
   height: 120px;
-  clip-path: circle(50px at 60px 60px);
   background-color: var(--highlight-color-1);
 }
 
-.circle:nth-of-type(5):hover {
-  clip-path: circle(60px at 60px 60px);
+@supports not ((clip-path: circle(75px at 85px 85px)) or (-webkit-clip-path: circle(75px at 85px 85px))) {
+  .circle {
+    border-radius: 50%;
+    transition: width 0.1s ease-out,
+                height 0.1s ease-out,
+                top 0.1s ease-out,
+                left 0.1s ease-out;
+  }
+
+  .circle:nth-of-type(1):hover {
+    will-change: height, width, top, left;
+    top: 15px;
+    left: 15px;
+    width: 180px;
+    height: 180px;
+  }
+
+  .circle:nth-of-type(2):hover {
+    will-change: height, width, top, left;
+    top: 45px;
+    left: 135px;
+    width: 130px;
+    height: 130px;
+  }
+
+  .circle:nth-of-type(3):hover {
+    will-change: height, width, top, left;
+    top: 115px;
+    left: 175px;
+    width: 110px;
+    height: 110px;
+  }
+
+  .circle:nth-of-type(4):hover {
+    will-change: height, width, top, left;
+    top: 130px;
+    left: 85px;
+    width: 170px;
+    height: 170px;
+  }
+
+  .circle:nth-of-type(5):hover {
+    will-change: height, width, top, left;
+    top: 145px;
+    left: 5px;
+    width: 130px;
+    height: 130px;
+  }
 }
 
-svg {
-  display: block;
-  position: absolute;
-  margin: auto;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+@supports ((clip-path: circle(75px at 85px 85px)) or (-webkit-clip-path: circle(75px at 85px 85px))) {
+  .circle {
+    transition: clip-path 0.1s ease-out 0s,
+                -webkit-clip-path 0.1s ease-out 0s,
+  }
+
+  .circle:nth-of-type(1) {
+    clip-path: circle(75px at 85px 85px);
+    -webkit-clip-path: circle(75px at 85px 85px);
+  }
+
+  .circle:nth-of-type(1):hover {
+    clip-path: circle(85px at 85px 85px);
+    -webkit-clip-path: circle(85px at 85px 85px);
+  }
+
+  .circle:nth-of-type(2) {
+    clip-path: circle(50px at 60px 60px);
+    -webkit-clip-path: circle(50px at 60px 60px);
+  }
+
+  .circle:nth-of-type(2):hover {
+    clip-path: circle(60px at 60px 60px);
+    -webkit-clip-path: circle(60px at 60px 60px);
+  }
+
+  .circle:nth-of-type(3) {
+    clip-path: circle(40px at 50px 50px);
+    -webkit-clip-path: circle(40px at 50px 50px);
+  }
+
+  .circle:nth-of-type(3):hover {
+    clip-path: circle(50px at 50px 50px);
+    -webkit-clip-path: circle(50px at 50px 50px);
+  }
+
+  .circle:nth-of-type(4) {
+    clip-path: circle(70px at 80px 80px);
+    -webkit-clip-path: circle(70px at 80px 80px);
+  }
+
+  .circle:nth-of-type(4):hover {
+    clip-path: circle(80px at 80px 80px);
+    -webkit-clip-path: circle(80px at 80px 80px);
+  }
+
+  .circle:nth-of-type(5) {
+    clip-path: circle(50px at 60px 60px);
+    -webkit-clip-path: circle(50px at 60px 60px);
+  }
+
+  .circle:nth-of-type(5):hover {
+    clip-path: circle(60px at 60px 60px);
+    -webkit-clip-path: circle(60px at 60px 60px);
+  }
 }
 
 svg g {
