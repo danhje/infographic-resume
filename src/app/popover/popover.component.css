@@ -42,33 +42,61 @@
 }
 
 .infobox {
+  overflow: hidden;
   margin-top: 0 1px 0 1px;
   width: 300px;
 }
 
-.hiddeninfobox.left {
-  transition: clip-path 0.5s linear 0s;
-  clip-path: inset(0% 0% 0% 100%);
+.infobox > div {
+  width: 300px;
 }
 
-.hiddeninfobox.right {
-  transition: clip-path 0.5s linear 0s;
-  clip-path: inset(0% 100% 0% 0%);
+@supports (clip-path: inset(0% 0% 0% 0%)) {
+
+  .hiddeninfobox.left {
+    transition: clip-path 0.5s linear 0s;
+    clip-path: inset(0% 0% 0% 100%);
+  }
+
+  .hiddeninfobox.right {
+    transition: clip-path 0.5s linear 0s;
+    clip-path: inset(0% 100% 0% 0%);
+  }
+
+  .revealinfobox {
+    transition: clip-path 0.5s linear 0.5s;
+    clip-path: inset(0% 0% 0% 0%);
+  }
+
+  .hideinfobox.left {
+    transition: clip-path 0.5s linear 0s;
+    clip-path: inset(0% 0% 0% 100%);
+  }
+
+  .hideinfobox.right {
+    transition: clip-path 0.5s linear 0s;
+    clip-path: inset(0% 100% 0% 0%);
+  }
+
 }
 
-.revealinfobox {
-  transition: clip-path 0.5s linear 0.5s;
-  clip-path: inset(0% 0% 0% 0%);
-}
+@supports not (clip-path: inset(0% 0% 0% 0%)) {
 
-.hideinfobox.left {
-  transition: clip-path 0.5s linear 0s;
-  clip-path: inset(0% 0% 0% 100%);
-}
+  .hiddeninfobox {
+    transition: opacity 0.5s linear 0s;
+    opacity: 0;
+  }
 
-.hideinfobox.right {
-  transition: clip-path 0.5s linear 0s;
-  clip-path: inset(0% 100% 0% 0%);
+  .revealinfobox {
+    transition: opacity 0.5s linear 3s;
+    opacity: 1;
+  }
+
+  .hideinfobox {
+    transition: opacity 0.5s linear 0s;
+    opacity: 0;
+  }
+
 }
 
 #separator {
@@ -110,13 +138,6 @@ h1 > span {
 }
 
 .subtitle {
-  /* display: block;
-  margin: 5px 0 0 0;
-  color: var(--background-color);
-  font-size: 10px;
-  text-transform: uppercase;
-  font-weight: 400;
-  pointer-events: auto; */
   display: block;
   margin: 3px 2px 10px 2px;
   color: var(--foreground-color);
