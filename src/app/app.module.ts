@@ -10,6 +10,7 @@ import { TimelineComponent } from './timeline/timeline.component';
 import { SummaryComponent } from './summary/summary.component';
 import { GradesComponent } from './grades/grades.component';
 import { TestimonialComponent } from './testimonial/testimonial.component';
+import { TechnologiesComponent } from './technologies/technologies.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { TestimonialComponent } from './testimonial/testimonial.component';
     TimelineComponent,
     SummaryComponent,
     GradesComponent,
-    TestimonialComponent
+    TestimonialComponent,
+    TechnologiesComponent
   ],
   imports: [
     BrowserModule,
