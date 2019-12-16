@@ -10,7 +10,7 @@ import { TimelineEntry } from './timelineentry.model';
 })
 export class TimelineComponent implements OnInit {
   minEntryWidth = 10;
-  timelineLeftBound = 30;
+  timelineLeftBound = 100;
   timelineRightBound = 930;
   firstTimelineDate: number;
   lastTimelineDate: number;
@@ -184,7 +184,7 @@ export class TimelineComponent implements OnInit {
         'education',
         false,
         'Angular & NodeJS - The MEAN Stack Guide',
-        'December 2019',
+        'January 2020',
         'Online course at Udemy.com. Planned, not yet started.',
         '2020.01',
         '2020.01'

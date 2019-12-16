@@ -3,6 +3,28 @@
   overflow: hidden;
 }
 
+#label-edu {
+  position: absolute;
+  top: 80px;
+  margin: 0;
+  height: 16px;
+  vertical-align: middle;
+  font-size: 13px;
+  font-weight: 500;
+  color: #888;
+}
+
+#label-work {
+  position: absolute;
+  top: 120px;
+  margin: 0;
+  height: 16px;
+  vertical-align: middle;
+  font-size: 13px;
+  font-weight: 500;
+  color: #888;
+}
+
 .timeline-entry {
   position: absolute;
   height: 16px;
