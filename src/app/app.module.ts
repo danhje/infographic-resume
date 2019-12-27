@@ -11,6 +11,7 @@ import { SummaryComponent } from './summary/summary.component';
 import { GradesComponent } from './grades/grades.component';
 import { TestimonialComponent } from './testimonial/testimonial.component';
 import { TechnologiesComponent } from './technologies/technologies.component';
+import { PrngService } from './prng.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { TechnologiesComponent } from './technologies/technologies.component';
     BrowserModule,
   ],
   entryComponents: [PopoverComponent],
-  providers: [],
+  providers: [PrngService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
