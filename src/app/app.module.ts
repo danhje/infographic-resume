@@ -9,7 +9,6 @@ import { SkillprofileComponent } from './skillprofile/skillprofile.component';
 import { TimelineComponent } from './timeline/timeline.component';
 import { SummaryComponent } from './summary/summary.component';
 import { GradesComponent } from './grades/grades.component';
-import { TestimonialComponent } from './testimonial/testimonial.component';
 import { TechnologiesComponent } from './technologies/technologies.component';
 import { PrngService } from './prng.service';
 
@@ -23,7 +22,6 @@ import { PrngService } from './prng.service';
     TimelineComponent,
     SummaryComponent,
     GradesComponent,
-    TestimonialComponent,
     TechnologiesComponent
   ],
   imports: [
