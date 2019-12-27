@@ -10,5 +10,8 @@
   width: 300px;
   height: 300px;
   z-index: -1;
-  background-color: aqua;
+}
+
+text {
+  fill: #990000;
 }
