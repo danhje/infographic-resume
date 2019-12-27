@@ -22,7 +22,8 @@
             "assets": [
               "src/assets",
               "src/google0633a3f15d212fe4.html",
-              "src/sitemap.xml"
+              "src/sitemap.xml",
+              "src/CNAME"
             ],
             "styles": [
               "src/styles.css"
