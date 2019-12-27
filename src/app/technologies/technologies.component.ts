@@ -17,70 +17,6 @@ export class TechnologiesComponent {
     return u.sort((a, b) => ( f[b] - f[a] ));
   }
 
-  draw(words, bounds) {
-    // move and scale cloud bounds to canvas
-    // bounds = [{x0, y0}, {x1, y1}]
-    const cHeight = 300;
-    const cWidth = 300;
-    const fontName = 'Impact';
-    const bWidth = bounds[1].x - bounds[0].x;
-    const bHeight = bounds[1].y - bounds[0].y;
-    const bMidX = bounds[0].x + bWidth / 2;
-    const bMidY = bounds[0].y + bHeight / 2;
-    const bDeltaX = cWidth / 2 - bounds[0].x + bWidth / 2;
-    const bDeltaY = cHeight / 2 - bounds[0].y + bHeight / 2;
-    const bScale = bounds ? Math.min( cWidth / bWidth, cHeight / bHeight) : 1;
-
-    console.log(
-      'bounds (' + bounds[0].x +
-      ', ' + bounds[0].y +
-      ', ' + bounds[1].x +
-      ', ' + bounds[1].y +
-      '), width ' + bWidth +
-      ', height ' + bHeight +
-      ', mid (' + bMidX +
-      ', ' + bMidY +
-      '), delta (' + bDeltaX +
-      ', ' + bDeltaY +
-      '), scale ' + bScale
-    );
-
-    // the library's bounds seem not to correspond to reality?
-    // try using .getBBox() instead?
-
-    const svg = d3.select('.cloud').append('svg')
-      .attr('width', cWidth)
-      .attr('height', cHeight);
-
-    const wCloud = svg.append('g')
-      // tslint:disable-next-line: no-bitwise
-      .attr('transform', 'translate(' + [bWidth, bHeight] + ') scale(' + bScale + ')')
-      .selectAll('text')
-      .data(words)
-      .enter().append('text')
-      .style('font-size', (d) => ( d.size + 'px' ))
-      .style('font-family', fontName)
-      .style('fill', (d, i) => ( d3.scale.category20(i) ))
-      .attr('text-anchor', 'middle')
-      .transition()
-      .duration(500)
-      .attr('transform', (d) => ( 'translate(' + [d.x, d.y] + ')rotate(' + d.rotate + ')' ))
-      .text((d) => ( d.text ));
-
-    // TO DO: function to find min and max x, y of all words
-    // and use it as the group's bbox
-    // then do the transformation
-
-    // const bbox = wCloud.node(0).getBBox();
-    // console.log(
-    //   'bbox (x: ' + bbox.x +
-    //   ', y: ' + bbox.y +
-    //   ', w: ' + bbox.width +
-    //   ', h: ' + bbox.height +
-    //   ')'
-    // );
-  }
-
   onClick() {
     const cloudElement = this.cloud.nativeElement;
     const firstSvg = cloudElement.querySelector('svg');
@@ -92,31 +28,96 @@ export class TechnologiesComponent {
     const cHeight = 300;
     const fontName = 'Impact';
 
-    console.log('first ' + fontName);
-    const text = 'javascript javascript javascript angular';
-
-    const words = this.sortByFrequency(text.split(/[ ,.]+/) )
-      .map((d, i) => ( {text: d, size: -i} ));
+    const words = [
+      {text: 'JavaScript', size: 35},
+      {text: 'Angular', size: 35},
+      {text: 'Python', size: 50},
+      {text: 'HTML5', size: 30},
+      {text: 'CSS3', size: 30},
+      {text: 'Node.js', size: 5},
+      {text: 'iPython', size: 30},
+      {text: 'MATLAB', size: 10},
+      {text: 'R', size: 5},
+      {text: 'PowerShell', size: 40},
+      {text: 'MongoDB', size: 9},
+      {text: 'SQL', size: 10},
+      {text: 'Git', size: 20},
+      {text: 'GitHub', size: 20},
+      {text: 'Docker', size: 20},
+      {text: 'Objective C', size: 20},
+      {text: 'Swift', size: 10},
+      {text: 'Micro Focus Operations Manager', size: 5},
+      {text: 'Microsoft SCOM', size: 40},
+      {text: 'Microsoft IIS', size: 5},
+      {text: 'TypeScript', size: 25},
+      {text: 'C++', size: 5},
+      {text: 'GraphQL', size: 5},
+      {text: 'JSON-LD', size: 10},
+      {text: 'Java', size: 10},
+      {text: 'Groovy', size: 5},
+      {text: 'C#', size: 5},
+      {text: 'Visual Studio Code', size: 10},
+      {text: 'Atom', size: 10},
+      {text: 'NumPy', size: 20},
+      {text: 'SciPy', size: 20},
+      {text: 'scikit-learn', size: 5},
+      {text: 'TensorFlow', size: 5},
+      {text: 'AutoCAD', size: 5},
+      {text: 'REST API', size: 15},
+      {text: 'LaTeX', size: 15},
+      {text: 'Parse Server', size: 15},
+      {text: 'PHP', size: 5},
+      {text: 'WordPress', size: 5},
+      {text: 'Xcode', size: 20}
+    ];
 
     const cTemp = document.createElement('canvas');
     const ctx = cTemp.getContext('2d');
     ctx.font = '100px ' + fontName;
 
-    const fRatio = Math.min(cWidth, cHeight) / ctx.measureText(words[0].text).width;
+    const fRatio = 0.7236749116607774;
     const fontScale = d3.scale.linear()
       .domain([
         d3.min(words, (d) => ( d.size )),
         d3.max(words, (d) => ( d.size ))
       ])
-      .range([20, 100 * fRatio / 2]);
+      .range([10, 100 * fRatio / 2]);
+
+    const colorArray = [];
+    for (let i = 1; i <= 5; i++) {
+      colorArray.push(getComputedStyle(document.documentElement).getPropertyValue(`--highlight-color-${i}`));
+    }
+
+    const fillColor = () => colorArray[Math.floor(Math.random() * 5)];
+
+    for (let i = 0; i < 100; i++) {
+      console.log(fillColor());
+    }
+
+    const draw = (w) => {
+      d3.select('.cloud').append('svg')
+          .attr('width', cWidth)
+          .attr('height', cHeight)
+        .append('g')
+          .attr('transform', 'translate(' + cWidth / 2 + ',' + cHeight / 2 + ')')
+        .selectAll('text')
+          .data(w)
+        .enter().append('text')
+          .style('font-size', d => d.size + 'px')
+          .style('font-family', fontName)
+          .style('fill', fillColor)
+          .attr('text-anchor', 'middle')
+          .attr('transform', d => 'translate(' + [d.x, d.y] + ')rotate(' + d.rotate + ')')
+          .text(d => d.text);
+    };
 
     d3.layout.cloud()
       .size([cWidth, cHeight])
       .words(words)
-      .rotate(() => ( Math.floor(Math.random() * 2) * 90 ))
+      .rotate(() => ( Math.floor(Math.random() * 2) * 90 - 90 ))
       .font(fontName)
       .fontSize((d) => ( fontScale(d.size) ))
-      .on('end', this.draw)
+      .on('end', draw)
       .start();
   }
 }
