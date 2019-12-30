@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { PrngService } from '../prng.service';
 
 declare const d3: any;
@@ -9,6 +9,7 @@ declare const d3: any;
   styleUrls: ['./technologies.component.css']
 })
 export class TechnologiesComponent implements OnInit {
+  @ViewChild('cloud', {static: true}) cloud: ElementRef;
 
   constructor(private prngService: PrngService) {}
 
@@ -135,6 +136,11 @@ export class TechnologiesComponent implements OnInit {
           .attr('text-anchor', 'middle')
           .attr('transform', d => 'translate(' + [d.x, d.y] + ')rotate(' + d.rotate + ')')
           .text(d => d.text);
+      // const textElems = this.cloud.nativeElement.querySelectorAll('text');
+      // [].forEach.call(textElems, (elem) => {
+      //   console.log(elem);
+      //   elem.style.transform = 'scale(1.2)';
+      // });
     };
 
     d3.layout.cloud()

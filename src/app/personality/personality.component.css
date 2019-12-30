@@ -11,7 +11,7 @@ span {
 .container {
   display: grid;
   grid-template-columns: max-content auto;
-  grid-template-rows: 40px max-content max-content max-content max-content max-content auto;
+  grid-template-rows: 70px max-content max-content max-content max-content max-content auto;
   height: 100%;
   width: 100%;
 }
