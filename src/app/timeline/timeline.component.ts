@@ -175,7 +175,7 @@ export class TimelineComponent implements OnInit {
         'education',
         false,
         'Angular 8 - The Complete Guide',
-        'October 2019 - February 2020',
+        'October 2019 - present',
         'Online course at Udemy.com. Not yet completed.',
         '2019.10',
         '2020.02'
@@ -266,10 +266,10 @@ export class TimelineComponent implements OnInit {
         'work',
         true,
         'Special Consultant at Sykehuspartner HF',
-        'January 2014 - November 2019',
+        'January 2014 - present',
         '2014 - 2018: IT Operations Manager at the Operations Bridge. Responsible for event management, as well as leading the resolution of major incidents by managing the team of technical experts that are mobilized to resolve the issue.<br /><br />2018 - present: Developer in the monitoring department, developing both infrastructure monitoring and end user monitoring (EUM) through scripts that emulate users of our IT services.',
         '2014.01',
-        '2019.11'
+        '2020.01'
       ),
       new TimelineEntry(
         'work',
