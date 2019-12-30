@@ -86,7 +86,8 @@ export class TechnologiesComponent implements OnInit {
       {text: 'Excel', size: 20},
       {text: 'IFTTT', size: 5},
       {text: 'MacOS', size: 20},
-      {text: 'Sketch', size: 10}
+      {text: 'Sketch', size: 10},
+      {text: 'Sphinx', size: 5}
     ];
 
     const cTemp = document.createElement('canvas');
