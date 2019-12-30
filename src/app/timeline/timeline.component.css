@@ -1,5 +1,8 @@
 :host {
   position: relative;
+}
+
+#wrapper {
   overflow: hidden;
 }
 
