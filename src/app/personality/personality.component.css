@@ -1,7 +1,3 @@
-:host {
-  overflow: hidden;
-}
-
 span {
   color: var(--background-color);
   font-size: 13px;

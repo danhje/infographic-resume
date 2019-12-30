@@ -1,3 +1,7 @@
+:host {
+  --border-style: 1px dashed #777;
+}
+
 #maintitle {
   font-size: 50px;
   text-align: center;
@@ -26,4 +30,49 @@ app-timeline {
 
 #spacer-bottom {
   height: 100px;
+}
+
+#gridcontainer > * {
+  position: relative; /* Needed for absolute positioning of ::before and ::after pseudo-elements */
+}
+
+/* Vertical lines to the left of cells */
+#gridcontainer > :nth-child(3n+4)::before,
+#gridcontainer > :nth-child(3n+5)::before {
+  position: absolute;
+  top: -5px;
+  left: -15px;
+  content: '';
+  border-left: var(--border-style);
+  height: 100%;
+}
+
+/* Horizontal lines above timeline */
+#gridcontainer > :nth-child(2)::before {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  content: '';
+  border-bottom: var(--border-style);
+  width: 100%;
+}
+
+/* Horizontal lines below timeline */
+#gridcontainer > :nth-child(2)::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: '';
+  border-bottom: var(--border-style);
+  width: 100%;
+}
+
+/* Horizontal lines above cells */
+#gridcontainer > :nth-child(n+6)::after {
+  position: absolute;
+  top: -20px;
+  left: 0;
+  content: '';
+  border-bottom: var(--border-style);
+  width: 100%;
 }
