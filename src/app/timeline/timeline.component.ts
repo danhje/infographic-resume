@@ -178,14 +178,14 @@ export class TimelineComponent implements OnInit {
         'October 2019 - present',
         'Online course at Udemy.com. Not yet completed.',
         '2019.10',
-        '2020.02'
+        '2020.03'
       ),
       new TimelineEntry(
         'education',
         false,
-        'Angular & NodeJS - The MEAN Stack Guide',
+        'DevOps Fundamentals',
         'January 2020',
-        'Online course at Udemy.com. Planned, not yet started.',
+        'A 4 day Microsoft Premier Workshop which covered both the DevOps methodology, as well as common tools used by a DevOps team. Through practical exercises the attendees got experience with the planning of sprints with user stories and tasks, setting up and configuring CI/CD pipelines, and to develop, release, deploy, operate and monitor apps. Azure DevOps Services was used, as well as Git, Visual Studio, VS Code, Azure Application Insight, Azure Monitor, Azure SQL and Azure Web App.',
         '2020.01',
         '2020.01'
       ),
