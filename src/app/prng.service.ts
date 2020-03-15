@@ -1,7 +1,7 @@
 import { OnInit } from '@angular/core';
 
 export class PrngService implements OnInit {
-  seed = 2022728428;
+  seed = 2527728428;
 
   ngOnInit() {
     this.seed = this.seed % 2147483647;
