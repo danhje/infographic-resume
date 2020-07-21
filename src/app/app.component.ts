@@ -11,7 +11,7 @@ import { PopoverComponent } from './popover/popover.component';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  @ViewChild('popover', {read: ViewContainerRef, static: false}) entry: ViewContainerRef;
+  @ViewChild('popover', { read: ViewContainerRef }) entry: ViewContainerRef;
   @ViewChild('gridcontainer', {read: ViewContainerRef, static: true}) gridContainer: ViewContainerRef;
 
   constructor(private componentFactoryResolver: ComponentFactoryResolver, private renderer: Renderer2) { }
