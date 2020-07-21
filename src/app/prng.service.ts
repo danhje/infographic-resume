@@ -1,5 +1,6 @@
-import { OnInit } from '@angular/core';
+import { OnInit, Injectable } from '@angular/core';
 
+@Injectable()
 export class PrngService implements OnInit {
   seed = 2527728428;
 
