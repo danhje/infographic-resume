@@ -90,7 +90,10 @@ export class TechnologiesComponent implements OnInit {
       {text: 'IFTTT', size: 5},
       {text: 'MacOS', size: 20},
       {text: 'Sketch', size: 10},
-      {text: 'Sphinx', size: 5}
+      {text: 'Sphinx', size: 5},
+      {text: 'pipenv', size: 20},
+      {text: 'Pester', size: 20},
+      {text: 'Django', size: 25}
     ];
 
     const cTemp = document.createElement('canvas');
