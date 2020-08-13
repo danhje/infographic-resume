@@ -93,10 +93,11 @@ export class TechnologiesComponent implements OnInit {
       {text: 'Sphinx', size: 5},
       {text: 'pipenv', size: 20},
       {text: 'Pester', size: 20},
-      {text: 'Django', size: 25}
+      {text: 'Django', size: 30},
+      {text: 'doctest', size: 20},
+      {text: 'GitLab', size: 10},
+      {text: 'Cython', size: 10}
       // Azure DevOps
-      // GitLab
-      // doctest?
     ];
 
     const cTemp = document.createElement('canvas');

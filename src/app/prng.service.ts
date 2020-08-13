@@ -2,7 +2,7 @@ import { OnInit, Injectable } from '@angular/core';
 
 @Injectable()
 export class PrngService implements OnInit {
-  seed = 2527728428;
+  seed = 2527728424;
 
   ngOnInit() {
     this.seed = this.seed % 2147483647;
