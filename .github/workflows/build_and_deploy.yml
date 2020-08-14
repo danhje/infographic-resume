@@ -13,7 +13,6 @@ jobs:
       uses: AhsanAyaz/angular-deploy-gh-pages-actions@v1.3.1
       with:
         github_access_token: ${{ secrets.ACCESS_TOKEN }} # see the Configuration section for how you can create secrets
-        build_configuration: production # The build environment for the app. please look configurations in your angular.json
-        base_href: https://resume.danielhjertholm.me/   # make sure this corresponds to https://<your_username>.github.io/<base_href>/
+        base_href: infographic-resume   # make sure this corresponds to https://<your_username>.github.io/<base_href>/
         deploy_branch: gh-pages # The branch the action should deploy to.
-        angular_dist_build_folder: dist # The folder where your project is supposed to be after running ng build by the action.
+        angular_dist_build_folder: dist/infographic-resume # The folder where your project is supposed to be after running ng build by the action.
