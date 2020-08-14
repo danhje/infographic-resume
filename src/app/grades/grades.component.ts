@@ -284,7 +284,7 @@ export class GradesComponent implements OnInit {
   }
 
   yPositionFromGrade(grade: number) {
-    return grade * 45 + 10;
+    return grade * 35 + 20;
   }
 
   classForCategory(category: string) {
