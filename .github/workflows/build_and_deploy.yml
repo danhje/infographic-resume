@@ -8,8 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: All things angular
-      uses: AhsanAyaz/angular-deploy-gh-pages-actions
+    - name: Angular Deploy to gh-pages
+      uses: AhsanAyaz/angular-deploy-gh-pages-actions@v1.3.1
       with:
         github_access_token: ${{ secrets.ACCESS_TOKEN }} # see the Configuration section for how you can create secrets
         build_configuration: staging # The build environment for the app. please look configurations in your angular.json
