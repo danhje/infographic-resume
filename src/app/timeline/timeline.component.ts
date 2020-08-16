@@ -113,7 +113,7 @@ export class TimelineComponent implements OnInit {
         false,
         'PLC Programming From Scratch (PLC 1)',
         'November 2017 - December 2017',
-        'Online course at Udemy.com. A very thorough course which equipped me with all the tools needed to be able to program PLCs. A few of the topics covered in the course: Ladder logic (conditions and outputs, branches, addressing, the most common instructions, best practices), data types, resolution and precision, PID control, PLC and module configuration, HMI, serial and ethernet connections, alarms, notifications, emulation and debugging.',
+        'Online course at Udemy.com. A very thorough course which equipped me with all the tools needed to be able to program PLCs. A few of the topics covered in the course: Ladder logic (conditions and outputs, branches, addressing, the most common instructions, best practices), data types, resolution and precision, PID control, PLC and module configuration, HMI development and integration, analog and digital signal processing, serial and ethernet connections, alarms, notifications, emulation and debugging.',
         '2017.11',
         '2017.12'
       ),
