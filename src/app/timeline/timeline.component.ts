@@ -176,7 +176,7 @@ export class TimelineComponent implements OnInit {
         false,
         'Angular 8 - The Complete Guide',
         'October 2019 - February 2020',
-        'Online course at Udemy.com. The course covered topics like data bidning (property binding, event binding, two-way binding), structural directives (ngIf, nfFor, ngSwitch), builit-in attribute directives (ngStyle, ngClass), custom structural and attribute directives, lifecycle hooks, hostbinding, services, routing and pipes. This website was built i parallel with taking the course, by way of practicing what I learned there.',
+        'Online course at Udemy.com. The course covered topics like data binding (property binding, event binding, two-way binding), structural directives (ngIf, ngFor, ngSwitch), built-in attribute directives (ngStyle, ngClass), custom structural and attribute directives, lifecycle hooks, host binding, services, routing and pipes. This website was built in parallel with taking the course, by way of practicing what I learned there.',
         '2019.10',
         '2020.02'
       ),
