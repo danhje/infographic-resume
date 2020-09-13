@@ -20,7 +20,7 @@ export class TechnologiesComponent implements OnInit {
     const fontWeight = 300;
 
     const words = [
-      {text: 'Microsoft SCOM', size: 30},
+      {text: 'Microsoft SCOM', size: 25},
       {text: 'JavaScript', size: 35},
       {text: 'Angular', size: 35},
       {text: 'Python', size: 50},
@@ -39,7 +39,7 @@ export class TechnologiesComponent implements OnInit {
       {text: 'Docker Compose', size: 30},
       {text: 'Objective C', size: 20},
       {text: 'Swift', size: 10},
-      {text: 'Micro Focus Operations Manager', size: 10},
+      {text: 'Operations Bridge Manager', size: 10},
       {text: 'Microsoft IIS', size: 5},
       {text: 'TypeScript', size: 25},
       {text: 'Xcode', size: 20},
@@ -50,7 +50,7 @@ export class TechnologiesComponent implements OnInit {
       {text: 'Java', size: 10},
       {text: 'Groovy', size: 5},
       {text: 'C#', size: 5},
-      {text: 'Visual Studio Code', size: 10},
+      {text: 'Visual Studio Code', size: 15},
       {text: 'Atom', size: 10},
       {text: 'NumPy', size: 20},
       {text: 'SciPy', size: 20},
@@ -87,7 +87,6 @@ export class TechnologiesComponent implements OnInit {
       {text: 'PyCharm', size: 5},
       {text: 'AD', size: 15},
       {text: 'Excel', size: 20},
-      {text: 'IFTTT', size: 5},
       {text: 'MacOS', size: 20},
       {text: 'Sketch', size: 10},
       {text: 'Sphinx', size: 5},
@@ -96,8 +95,12 @@ export class TechnologiesComponent implements OnInit {
       {text: 'Django', size: 30},
       {text: 'doctest', size: 20},
       {text: 'GitLab', size: 10},
-      {text: 'Cython', size: 10}
-      // Azure DevOps
+      {text: 'Cython', size: 10},
+      {text: 'pandas', size: 20},
+      {text: 'pytest', size: 20},
+      {text: 'unittest', size: 10},
+      {text: 'pydantic', size: 5},
+      {text: 'Azure DevOps', size: 5},
     ];
 
     const cTemp = document.createElement('canvas');
