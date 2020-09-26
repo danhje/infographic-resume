@@ -30,11 +30,12 @@ export class TechnologiesComponent implements OnInit {
       {text: 'iPython', size: 30},
       {text: 'MATLAB', size: 10},
       {text: 'R', size: 5},
-      {text: 'PowerShell', size: 35},
+      {text: 'PowerShell', size: 30},
       {text: 'MongoDB', size: 9},
       {text: 'SQL', size: 10},
       {text: 'Git', size: 20},
       {text: 'GitHub', size: 20},
+      {text: 'GitHub Actions', size: 20},
       {text: 'Docker', size: 20},
       {text: 'Docker Compose', size: 30},
       {text: 'Objective C', size: 20},
@@ -99,8 +100,13 @@ export class TechnologiesComponent implements OnInit {
       {text: 'pandas', size: 20},
       {text: 'pytest', size: 20},
       {text: 'unittest', size: 10},
-      {text: 'pydantic', size: 5},
+      {text: 'pydantic', size: 10},
       {text: 'Azure DevOps', size: 5},
+      {text: 'Zsh', size: 5},
+      {text: 'YML', size: 5},
+      {text: 'FastAPI', size: 10},
+      {text: 'Hypothesis', size: 10},
+      {text: 'Swagger', size: 5}
     ];
 
     const cTemp = document.createElement('canvas');
