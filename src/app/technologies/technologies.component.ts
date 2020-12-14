@@ -106,7 +106,9 @@ export class TechnologiesComponent implements OnInit {
       {text: 'YML', size: 5},
       {text: 'FastAPI', size: 10},
       {text: 'Hypothesis', size: 10},
-      {text: 'Swagger', size: 5}
+      {text: 'Swagger', size: 5},
+      {text: 'Kafka', size: 5},
+      {text: 'Jupyter Notebook', size: 10}
     ];
 
     const cTemp = document.createElement('canvas');
