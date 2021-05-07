@@ -190,6 +190,15 @@ export class TimelineComponent implements OnInit {
         '2020.01'
       ),
       new TimelineEntry(
+        'education',
+        false,
+        'Async Techniques and Examples in Python',
+        'April 2021',
+        'Asyncio, threading, multiprocessing, task coordination, thread safety, and C-based parallelism with Cython.',
+        '2021.04',
+        '2021.04'
+      ),
+      new TimelineEntry(
         'work',
         true,
         'IT Service Technician at R/M/S Scandinavia AS',
@@ -270,6 +279,15 @@ export class TimelineComponent implements OnInit {
         '2014 - 2018: IT Operations Manager at the Operations Bridge. Responsible for event management, as well as leading the resolution of major incidents by managing the team of technical experts that are mobilized to resolve the issue.<br /><br />2018 - present: Developer in the monitoring department, developing both infrastructure monitoring and end user monitoring (EUM) through scripts that emulate users of our IT services.',
         '2014.01',
         '2020.01'
+      ),
+      new TimelineEntry(
+        'work',
+        true,
+        'Senior Analyst at Statnett SF',
+        'January 2021 - present',
+        '',
+        '2021.01',
+        '2022.01'
       ),
       new TimelineEntry(
         'work',
