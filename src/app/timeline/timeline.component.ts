@@ -286,7 +286,7 @@ export class TimelineComponent implements OnInit {
         'Senior Analyst at Statnett SF',
         'January 2021 - present',
         '',
-        '2021.01',
+        '2021.00',
         '2022.01'
       ),
       new TimelineEntry(
