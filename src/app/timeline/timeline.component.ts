@@ -285,7 +285,7 @@ export class TimelineComponent implements OnInit {
         true,
         'Senior Analyst at Statnett SF',
         'January 2021 - present',
-        'As a senior analyst and python developer at Statnett\'s department for Data Science and Data Modelling, I work side by side with data scientists and power system exports to develop and deploy services and modells that monitor, operate and balance the norwegian power grid.',
+        'As a senior analyst and python developer at Statnett\'s department for Data Science and Data Modelling, I work side by side with data scientists and power system experts to develop and deploy services and modells that monitor, operate and balance the norwegian power grid.',
         '2021.00',
         '2022.01'
       ),
